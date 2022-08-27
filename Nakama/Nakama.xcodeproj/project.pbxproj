@@ -1,0 +1,849 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14620BFEC33F8ECC8D8FB166 /* Pods_Nakama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F162E9295CA7B5F250C9D4AA /* Pods_Nakama.framework */; };
+		76361E8E28B6573600B13A1D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76361E8D28B6573600B13A1D /* LoginVC.swift */; };
+		76361E9028B6577400B13A1D /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76361E8F28B6577400B13A1D /* RegistrationVC.swift */; };
+		7636441F28B9011F0007863A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7636441E28B9011F0007863A /* Localizable.strings */; };
+		7636442128B906D60007863A /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636442028B906D60007863A /* StringConstants.swift */; };
+		7636442328B907B50007863A /* SharedExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636442228B907B50007863A /* SharedExtensions.swift */; };
+		7636442528B90CAA0007863A /* SharedConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636442428B90CAA0007863A /* SharedConstants.swift */; };
+		766489ED28B924D900F679F5 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766489EC28B924D900F679F5 /* RegistrationPresenter.swift */; };
+		7683603C28B9185700014A3A /* BetterTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683603B28B9185700014A3A /* BetterTextField.swift */; };
+		7683603E28B9186300014A3A /* BetterTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7683603D28B9186300014A3A /* BetterTextField.xib */; };
+		76AC58D528B50BB90064DC07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AC58D428B50BB90064DC07 /* AppDelegate.swift */; };
+		76AC58D728B50BB90064DC07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AC58D628B50BB90064DC07 /* SceneDelegate.swift */; };
+		76AC58D928B50BB90064DC07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AC58D828B50BB90064DC07 /* ViewController.swift */; };
+		76AC58DC28B50BB90064DC07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76AC58DA28B50BB90064DC07 /* Main.storyboard */; };
+		76AC58DE28B50BBB0064DC07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76AC58DD28B50BBB0064DC07 /* Assets.xcassets */; };
+		76AC58E128B50BBB0064DC07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76AC58DF28B50BBB0064DC07 /* LaunchScreen.storyboard */; };
+		76AC58EC28B50BBB0064DC07 /* NakamaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AC58EB28B50BBB0064DC07 /* NakamaTests.swift */; };
+		76AC58F628B50BBB0064DC07 /* NakamaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AC58F528B50BBB0064DC07 /* NakamaUITests.swift */; };
+		76AC58F828B50BBB0064DC07 /* NakamaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AC58F728B50BBB0064DC07 /* NakamaUITestsLaunchTests.swift */; };
+		76AC590528B50CC90064DC07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76AC590428B50CC90064DC07 /* GoogleService-Info.plist */; };
+		76AC590628B50CC90064DC07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76AC590428B50CC90064DC07 /* GoogleService-Info.plist */; };
+		76AC590728B50CC90064DC07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76AC590428B50CC90064DC07 /* GoogleService-Info.plist */; };
+		76EB6A8028B665A00086C92C /* SharedEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EB6A7F28B665A00086C92C /* SharedEnums.swift */; };
+		76FDAE7828B518DD00491F78 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76FDAE7728B518DD00491F78 /* Login.storyboard */; };
+		76FDAE7B28B5230500491F78 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FDAE7A28B5230500491F78 /* RoundedButton.swift */; };
+		B8F3B46D8567744CE7CB7616 /* Pods_NakamaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68993490A7569DB0B933B78 /* Pods_NakamaTests.framework */; };
+		DE8D17F7C979336AF421553F /* Pods_Nakama_NakamaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7742925C323507E78978D04 /* Pods_Nakama_NakamaUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		76AC58E828B50BBB0064DC07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76AC58C928B50BB90064DC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 76AC58D028B50BB90064DC07;
+			remoteInfo = Nakama;
+		};
+		76AC58F228B50BBB0064DC07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76AC58C928B50BB90064DC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 76AC58D028B50BB90064DC07;
+			remoteInfo = Nakama;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0D0C2448DEB26FED55524283 /* Pods-Nakama.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nakama.debug.xcconfig"; path = "Target Support Files/Pods-Nakama/Pods-Nakama.debug.xcconfig"; sourceTree = "<group>"; };
+		21AC87D5B9535F957933F9D6 /* Pods-Nakama-NakamaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nakama-NakamaUITests.release.xcconfig"; path = "Target Support Files/Pods-Nakama-NakamaUITests/Pods-Nakama-NakamaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		52750940D2EAB55F0B57B322 /* Pods-NakamaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NakamaTests.debug.xcconfig"; path = "Target Support Files/Pods-NakamaTests/Pods-NakamaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		76361E8D28B6573600B13A1D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		76361E8F28B6577400B13A1D /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
+		7636441E28B9011F0007863A /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		7636442028B906D60007863A /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		7636442228B907B50007863A /* SharedExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedExtensions.swift; sourceTree = "<group>"; };
+		7636442428B90CAA0007863A /* SharedConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedConstants.swift; sourceTree = "<group>"; };
+		766489EC28B924D900F679F5 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		7683603B28B9185700014A3A /* BetterTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterTextField.swift; sourceTree = "<group>"; };
+		7683603D28B9186300014A3A /* BetterTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BetterTextField.xib; sourceTree = "<group>"; };
+		76AC58D128B50BB90064DC07 /* Nakama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nakama.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		76AC58D428B50BB90064DC07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		76AC58D628B50BB90064DC07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		76AC58D828B50BB90064DC07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		76AC58DB28B50BB90064DC07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		76AC58DD28B50BBB0064DC07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		76AC58E028B50BBB0064DC07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		76AC58E228B50BBB0064DC07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76AC58E728B50BBB0064DC07 /* NakamaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NakamaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		76AC58EB28B50BBB0064DC07 /* NakamaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NakamaTests.swift; sourceTree = "<group>"; };
+		76AC58F128B50BBB0064DC07 /* NakamaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NakamaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		76AC58F528B50BBB0064DC07 /* NakamaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NakamaUITests.swift; sourceTree = "<group>"; };
+		76AC58F728B50BBB0064DC07 /* NakamaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NakamaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		76AC590428B50CC90064DC07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		76EB6A7F28B665A00086C92C /* SharedEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedEnums.swift; sourceTree = "<group>"; };
+		76FDAE7728B518DD00491F78 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		76FDAE7A28B5230500491F78 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		9D08E769DAA403EA857A52B6 /* Pods-Nakama.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nakama.release.xcconfig"; path = "Target Support Files/Pods-Nakama/Pods-Nakama.release.xcconfig"; sourceTree = "<group>"; };
+		A68993490A7569DB0B933B78 /* Pods_NakamaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NakamaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0749F20845E773FFBD3828F /* Pods-Nakama-NakamaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nakama-NakamaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Nakama-NakamaUITests/Pods-Nakama-NakamaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B7742925C323507E78978D04 /* Pods_Nakama_NakamaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nakama_NakamaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF8C805938D31196CB16DBF1 /* Pods-NakamaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NakamaTests.release.xcconfig"; path = "Target Support Files/Pods-NakamaTests/Pods-NakamaTests.release.xcconfig"; sourceTree = "<group>"; };
+		F162E9295CA7B5F250C9D4AA /* Pods_Nakama.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nakama.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		76AC58CE28B50BB90064DC07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14620BFEC33F8ECC8D8FB166 /* Pods_Nakama.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76AC58E428B50BBB0064DC07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8F3B46D8567744CE7CB7616 /* Pods_NakamaTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76AC58EE28B50BBB0064DC07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE8D17F7C979336AF421553F /* Pods_Nakama_NakamaUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3E142340837A990BCDDEF4DF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D0C2448DEB26FED55524283 /* Pods-Nakama.debug.xcconfig */,
+				9D08E769DAA403EA857A52B6 /* Pods-Nakama.release.xcconfig */,
+				B0749F20845E773FFBD3828F /* Pods-Nakama-NakamaUITests.debug.xcconfig */,
+				21AC87D5B9535F957933F9D6 /* Pods-Nakama-NakamaUITests.release.xcconfig */,
+				52750940D2EAB55F0B57B322 /* Pods-NakamaTests.debug.xcconfig */,
+				DF8C805938D31196CB16DBF1 /* Pods-NakamaTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		76361E8A28B64A8200B13A1D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7636442428B90CAA0007863A /* SharedConstants.swift */,
+				76EB6A7F28B665A00086C92C /* SharedEnums.swift */,
+				7636442228B907B50007863A /* SharedExtensions.swift */,
+				7636442028B906D60007863A /* StringConstants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7636441D28B900B10007863A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7636441E28B9011F0007863A /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		76AC58C828B50BB90064DC07 = {
+			isa = PBXGroup;
+			children = (
+				76AC58D328B50BB90064DC07 /* Nakama */,
+				76AC58EA28B50BBB0064DC07 /* NakamaTests */,
+				76AC58F428B50BBB0064DC07 /* NakamaUITests */,
+				76AC58D228B50BB90064DC07 /* Products */,
+				3E142340837A990BCDDEF4DF /* Pods */,
+				AB9EC5321035963FC9AC8AC9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		76AC58D228B50BB90064DC07 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				76AC58D128B50BB90064DC07 /* Nakama.app */,
+				76AC58E728B50BBB0064DC07 /* NakamaTests.xctest */,
+				76AC58F128B50BBB0064DC07 /* NakamaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		76AC58D328B50BB90064DC07 /* Nakama */ = {
+			isa = PBXGroup;
+			children = (
+				76361E8A28B64A8200B13A1D /* Utils */,
+				76FDAE7928B51EC600491F78 /* CustomUI */,
+				76FDAE7628B5189700491F78 /* Login */,
+				7636441D28B900B10007863A /* Resources */,
+				76AC58D428B50BB90064DC07 /* AppDelegate.swift */,
+				76AC58D628B50BB90064DC07 /* SceneDelegate.swift */,
+				76AC58D828B50BB90064DC07 /* ViewController.swift */,
+				76AC58DA28B50BB90064DC07 /* Main.storyboard */,
+				76AC58DD28B50BBB0064DC07 /* Assets.xcassets */,
+				76AC58DF28B50BBB0064DC07 /* LaunchScreen.storyboard */,
+				76AC58E228B50BBB0064DC07 /* Info.plist */,
+				76AC590428B50CC90064DC07 /* GoogleService-Info.plist */,
+			);
+			path = Nakama;
+			sourceTree = "<group>";
+		};
+		76AC58EA28B50BBB0064DC07 /* NakamaTests */ = {
+			isa = PBXGroup;
+			children = (
+				76AC58EB28B50BBB0064DC07 /* NakamaTests.swift */,
+			);
+			path = NakamaTests;
+			sourceTree = "<group>";
+		};
+		76AC58F428B50BBB0064DC07 /* NakamaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				76AC58F528B50BBB0064DC07 /* NakamaUITests.swift */,
+				76AC58F728B50BBB0064DC07 /* NakamaUITestsLaunchTests.swift */,
+			);
+			path = NakamaUITests;
+			sourceTree = "<group>";
+		};
+		76FDAE7628B5189700491F78 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				76361E8D28B6573600B13A1D /* LoginVC.swift */,
+				76361E8F28B6577400B13A1D /* RegistrationVC.swift */,
+				766489EC28B924D900F679F5 /* RegistrationPresenter.swift */,
+				76FDAE7728B518DD00491F78 /* Login.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		76FDAE7928B51EC600491F78 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				76FDAE7A28B5230500491F78 /* RoundedButton.swift */,
+				7683603B28B9185700014A3A /* BetterTextField.swift */,
+				7683603D28B9186300014A3A /* BetterTextField.xib */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		AB9EC5321035963FC9AC8AC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F162E9295CA7B5F250C9D4AA /* Pods_Nakama.framework */,
+				B7742925C323507E78978D04 /* Pods_Nakama_NakamaUITests.framework */,
+				A68993490A7569DB0B933B78 /* Pods_NakamaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		76AC58D028B50BB90064DC07 /* Nakama */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76AC58FB28B50BBB0064DC07 /* Build configuration list for PBXNativeTarget "Nakama" */;
+			buildPhases = (
+				45224F4C4F673084568468E6 /* [CP] Check Pods Manifest.lock */,
+				76AC58CD28B50BB90064DC07 /* Sources */,
+				76AC58CE28B50BB90064DC07 /* Frameworks */,
+				76AC58CF28B50BB90064DC07 /* Resources */,
+				3EF99CA7D4CB89E4B7DA2A39 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nakama;
+			productName = Nakama;
+			productReference = 76AC58D128B50BB90064DC07 /* Nakama.app */;
+			productType = "com.apple.product-type.application";
+		};
+		76AC58E628B50BBB0064DC07 /* NakamaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76AC58FE28B50BBB0064DC07 /* Build configuration list for PBXNativeTarget "NakamaTests" */;
+			buildPhases = (
+				A6A66D3E0A8360B1F3F36140 /* [CP] Check Pods Manifest.lock */,
+				76AC58E328B50BBB0064DC07 /* Sources */,
+				76AC58E428B50BBB0064DC07 /* Frameworks */,
+				76AC58E528B50BBB0064DC07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				76AC58E928B50BBB0064DC07 /* PBXTargetDependency */,
+			);
+			name = NakamaTests;
+			productName = NakamaTests;
+			productReference = 76AC58E728B50BBB0064DC07 /* NakamaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		76AC58F028B50BBB0064DC07 /* NakamaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76AC590128B50BBB0064DC07 /* Build configuration list for PBXNativeTarget "NakamaUITests" */;
+			buildPhases = (
+				5EFE4B4DD08ABC9CF8C22A95 /* [CP] Check Pods Manifest.lock */,
+				76AC58ED28B50BBB0064DC07 /* Sources */,
+				76AC58EE28B50BBB0064DC07 /* Frameworks */,
+				76AC58EF28B50BBB0064DC07 /* Resources */,
+				D35F0B72AA082D1B6720646F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				76AC58F328B50BBB0064DC07 /* PBXTargetDependency */,
+			);
+			name = NakamaUITests;
+			productName = NakamaUITests;
+			productReference = 76AC58F128B50BBB0064DC07 /* NakamaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		76AC58C928B50BB90064DC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					76AC58D028B50BB90064DC07 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					76AC58E628B50BBB0064DC07 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 76AC58D028B50BB90064DC07;
+					};
+					76AC58F028B50BBB0064DC07 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 76AC58D028B50BB90064DC07;
+					};
+				};
+			};
+			buildConfigurationList = 76AC58CC28B50BB90064DC07 /* Build configuration list for PBXProject "Nakama" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 76AC58C828B50BB90064DC07;
+			productRefGroup = 76AC58D228B50BB90064DC07 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				76AC58D028B50BB90064DC07 /* Nakama */,
+				76AC58E628B50BBB0064DC07 /* NakamaTests */,
+				76AC58F028B50BBB0064DC07 /* NakamaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		76AC58CF28B50BB90064DC07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76AC58E128B50BBB0064DC07 /* LaunchScreen.storyboard in Resources */,
+				7683603E28B9186300014A3A /* BetterTextField.xib in Resources */,
+				7636441F28B9011F0007863A /* Localizable.strings in Resources */,
+				76AC590528B50CC90064DC07 /* GoogleService-Info.plist in Resources */,
+				76AC58DE28B50BBB0064DC07 /* Assets.xcassets in Resources */,
+				76FDAE7828B518DD00491F78 /* Login.storyboard in Resources */,
+				76AC58DC28B50BB90064DC07 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76AC58E528B50BBB0064DC07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76AC590628B50CC90064DC07 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76AC58EF28B50BBB0064DC07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76AC590728B50CC90064DC07 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3EF99CA7D4CB89E4B7DA2A39 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nakama/Pods-Nakama-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nakama/Pods-Nakama-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Nakama/Pods-Nakama-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		45224F4C4F673084568468E6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nakama-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5EFE4B4DD08ABC9CF8C22A95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nakama-NakamaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6A66D3E0A8360B1F3F36140 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NakamaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D35F0B72AA082D1B6720646F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nakama-NakamaUITests/Pods-Nakama-NakamaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Nakama-NakamaUITests/Pods-Nakama-NakamaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Nakama-NakamaUITests/Pods-Nakama-NakamaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		76AC58CD28B50BB90064DC07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76AC58D928B50BB90064DC07 /* ViewController.swift in Sources */,
+				766489ED28B924D900F679F5 /* RegistrationPresenter.swift in Sources */,
+				76AC58D528B50BB90064DC07 /* AppDelegate.swift in Sources */,
+				76361E8E28B6573600B13A1D /* LoginVC.swift in Sources */,
+				76FDAE7B28B5230500491F78 /* RoundedButton.swift in Sources */,
+				7636442128B906D60007863A /* StringConstants.swift in Sources */,
+				7636442328B907B50007863A /* SharedExtensions.swift in Sources */,
+				7683603C28B9185700014A3A /* BetterTextField.swift in Sources */,
+				7636442528B90CAA0007863A /* SharedConstants.swift in Sources */,
+				76EB6A8028B665A00086C92C /* SharedEnums.swift in Sources */,
+				76361E9028B6577400B13A1D /* RegistrationVC.swift in Sources */,
+				76AC58D728B50BB90064DC07 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76AC58E328B50BBB0064DC07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76AC58EC28B50BBB0064DC07 /* NakamaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76AC58ED28B50BBB0064DC07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76AC58F628B50BBB0064DC07 /* NakamaUITests.swift in Sources */,
+				76AC58F828B50BBB0064DC07 /* NakamaUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		76AC58E928B50BBB0064DC07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 76AC58D028B50BB90064DC07 /* Nakama */;
+			targetProxy = 76AC58E828B50BBB0064DC07 /* PBXContainerItemProxy */;
+		};
+		76AC58F328B50BBB0064DC07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 76AC58D028B50BB90064DC07 /* Nakama */;
+			targetProxy = 76AC58F228B50BBB0064DC07 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		76AC58DA28B50BB90064DC07 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				76AC58DB28B50BB90064DC07 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		76AC58DF28B50BBB0064DC07 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				76AC58E028B50BBB0064DC07 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		76AC58F928B50BBB0064DC07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		76AC58FA28B50BBB0064DC07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		76AC58FC28B50BBB0064DC07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D0C2448DEB26FED55524283 /* Pods-Nakama.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2WK658THW5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Nakama/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yjoon.Nakama;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		76AC58FD28B50BBB0064DC07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D08E769DAA403EA857A52B6 /* Pods-Nakama.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2WK658THW5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Nakama/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yjoon.Nakama;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		76AC58FF28B50BBB0064DC07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52750940D2EAB55F0B57B322 /* Pods-NakamaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2WK658THW5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yjoon.NakamaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nakama.app/Nakama";
+			};
+			name = Debug;
+		};
+		76AC590028B50BBB0064DC07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF8C805938D31196CB16DBF1 /* Pods-NakamaTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2WK658THW5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yjoon.NakamaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nakama.app/Nakama";
+			};
+			name = Release;
+		};
+		76AC590228B50BBB0064DC07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0749F20845E773FFBD3828F /* Pods-Nakama-NakamaUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2WK658THW5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yjoon.NakamaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Nakama;
+			};
+			name = Debug;
+		};
+		76AC590328B50BBB0064DC07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21AC87D5B9535F957933F9D6 /* Pods-Nakama-NakamaUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2WK658THW5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yjoon.NakamaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Nakama;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		76AC58CC28B50BB90064DC07 /* Build configuration list for PBXProject "Nakama" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76AC58F928B50BBB0064DC07 /* Debug */,
+				76AC58FA28B50BBB0064DC07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76AC58FB28B50BBB0064DC07 /* Build configuration list for PBXNativeTarget "Nakama" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76AC58FC28B50BBB0064DC07 /* Debug */,
+				76AC58FD28B50BBB0064DC07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76AC58FE28B50BBB0064DC07 /* Build configuration list for PBXNativeTarget "NakamaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76AC58FF28B50BBB0064DC07 /* Debug */,
+				76AC590028B50BBB0064DC07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76AC590128B50BBB0064DC07 /* Build configuration list for PBXNativeTarget "NakamaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76AC590228B50BBB0064DC07 /* Debug */,
+				76AC590328B50BBB0064DC07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 76AC58C928B50BB90064DC07 /* Project object */;
+}

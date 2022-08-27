@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>463591642769-7u001ioaa9hfqf9l2cr7ui533rgtuecg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.463591642769-7u001ioaa9hfqf9l2cr7ui533rgtuecg</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAvLWJFG9oEgwTT7Uwj4uA_oVH4e6TNtGw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>463591642769</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.yjoon.Nakama</string>
+	<key>PROJECT_ID</key>
+	<string>nakama-5e103</string>
+	<key>STORAGE_BUCKET</key>
+	<string>nakama-5e103.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:463591642769:ios:82aed0c024f700dd475130</string>
+</dict>
+</plist>

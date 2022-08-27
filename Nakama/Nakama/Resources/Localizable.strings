@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  Nakama
+
+  Created by Yew Joon Wong on 26/08/2022.
+  
+*/
+
+// MARK: - General
+"BTN_NEXT" = "Next";
+
+// MARK: - Login
+"LOGIN_LBL_CONTINUE_3RD_PARTY" = "or continue with";
+"LOGIN_LBL_SIGN_UP" = "Don't have an account yet?";
+"LOGIN_BTN_SIGN_IN" = "Sign In";
+"LOGIN_BTN_SIGN_UP" = "Sign Up";
+
+// MARK: - Registration
+"REGISTER_LBL_STEP1_TITLE" = "Let's get you started. Firstly, tell us your name.";
+"REGISTER_LBL_STEP1_DESC" = "This will be the name displayed on your profile that other people will see!";
+"REGISTER_LBL_STEP2_TITLE" = "Next, tell us your email address";
+"REGISTER_LBL_STEP2_DESC" = "We'll send a verification code to your email upon signing up.";
+"REGISTER_LBL_STEP3_TITLE" = "Lastly, set your password.";
+"REGISTER_LBL_STEP3_DESC" = "Your password should contain lowercase, uppercase, numeric and special characters. Keep it secure!";
+"REGISTER_TXT_PLACEHOLDER_USERNAME" = "Username";
+"REGISTER_TXT_PLACEHOLDER_EMAIL" = "Email";
+"REGISTER_TXT_PLACEHOLDER_PASSWORD" = "Password";
+"REGISTER_TXT_PLACEHOLDER_CONFIRM_PASSWORD" = "Confirm Password";
+"REGISTER_BTN_FINISH" = "All set!";
+
