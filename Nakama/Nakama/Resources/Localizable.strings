@@ -8,6 +8,11 @@
 
 // MARK: - General
 "BTN_NEXT" = "Next";
+"BTN_OK" = "OK";
+
+// MARK: - Errors
+"ERROR_TITLE_GENERAL" = "Error";
+"ERROR_MESSAGE_GENERAL" = "Oops, we've encountered an error. Please try again later.";
 
 // MARK: - Login
 "LOGIN_LBL_CONTINUE_3RD_PARTY" = "or continue with";
@@ -27,4 +32,9 @@
 "REGISTER_TXT_PLACEHOLDER_PASSWORD" = "Password";
 "REGISTER_TXT_PLACEHOLDER_CONFIRM_PASSWORD" = "Confirm Password";
 "REGISTER_BTN_FINISH" = "All set!";
+
+// MARK: - Home
+
+// MARK: - Profile
+"PROFILE_LBL_POSTS_HEADER" = "My Posts";
 

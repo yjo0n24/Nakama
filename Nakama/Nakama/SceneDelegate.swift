@@ -17,6 +17,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        // Observers
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(setRootVC(_:)),
+            name: .setRootVC, object: nil
+        )
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -47,6 +54,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
+    @objc private func setRootVC(_ notification: Notification) {
+        guard let storyboard = notification.userInfo?[SharedConstants.Key.storyboardName] as? String,
+              let vc = UIStoryboard(name: storyboard, bundle: nil).instantiateInitialViewController() else {
+            return
+        }
+        window?.rootViewController = vc
+        window?.makeKeyAndVisible()
+    }
 }
 

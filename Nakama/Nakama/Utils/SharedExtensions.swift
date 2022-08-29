@@ -18,3 +18,8 @@ extension String {
         return predicate.evaluate(with: self)
     }
 }
+
+// MARK: - NotificationCenter
+extension Notification.Name {
+    static let setRootVC = Notification.Name("setRootVC")
+}

@@ -11,6 +11,12 @@ struct StringConstants {
     
     struct General {
         static let btnNext = "BTN_NEXT"
+        static let btnOk = "BTN_OK"
+    }
+    
+    struct Error {
+        static let titleGeneral = "ERROR_TITLE_GENERAL"
+        static let msgGeneral = "ERROR_MESSAGE_GENERAL"
     }
     
     struct Registration {
@@ -25,5 +31,9 @@ struct StringConstants {
         static let txtPlaceholderPassword = "REGISTER_TXT_PLACEHOLDER_PASSWORD"
         static let txtPlaceholderConfirmPassword = "REGISTER_TXT_PLACEHOLDER_CONFIRM_PASSWORD"
         static let btnFinish = "REGISTER_BTN_FINISH"
+    }
+    
+    struct Profile {
+        static let lblPostsHeader = "PROFILE_LBL_POSTS_HEADER"
     }
 }

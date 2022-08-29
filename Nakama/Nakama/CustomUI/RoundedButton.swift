@@ -10,7 +10,7 @@ import UIKit
 @IBDesignable class RoundedButton: UIButton {
     
     // MARK: - Variables
-    @IBInspectable var cornerRadius: CGFloat = 10.0 {
+    @IBInspectable var isCircleButton: Bool = false {
         didSet {
             setNeedsLayout()
         }
@@ -52,7 +52,15 @@ import UIKit
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.layer.cornerRadius = cornerRadius
+        
+        if isCircleButton {
+            self.layer.cornerRadius = self.bounds.height / 2
+            self.imageView?.contentMode = .scaleAspectFill
+        } else {
+            self.layer.cornerRadius = 10.0
+        }
+        self.clipsToBounds = true
+        
         self.layer.borderWidth = borderWidth
         self.layer.borderColor = borderColor.cgColor
     }

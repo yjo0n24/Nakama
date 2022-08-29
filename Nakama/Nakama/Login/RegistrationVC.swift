@@ -80,6 +80,7 @@ class RegistrationVC: UIViewController {
     }
 }
 
+// MARK: - RegistrationPresenterProtocol
 extension RegistrationVC: RegistrationPresenterProtocol {
     
     func didValidateInput(isValid: Bool) {

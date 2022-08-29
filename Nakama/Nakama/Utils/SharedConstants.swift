@@ -16,10 +16,22 @@ struct SharedConstants {
     
     struct StoryboardName {
         static let login = "Login"
+        static let home = "Home"
     }
     
     struct StoryboardId {
         static let loginVC = "LoginVC"
         static let registrationVC = "RegistrationVC"
+    }
+    
+    struct Key {
+        static let storyboardName = "storyboardName"
+        static let contentSize = "contentSize"
+    }
+    
+    struct UserDefaultsKey {
+        static let userId = "userId"
+        static let email = "userEmail"
+        static let username = "username"
     }
 }

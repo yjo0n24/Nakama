@@ -7,16 +7,20 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class LoginVC: BaseUIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var btnSignIn: RoundedButton!
     
+    // MARK: - Variables
+    private let presenter: LoginPresenter = LoginPresenter()
+    
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.delegate = self
         initUI()
     }
     
@@ -26,16 +30,12 @@ class LoginVC: UIViewController {
     }
     
     @objc private func validateSignIn() {
-        if !txtEmail.text!.isEmpty && !txtPassword.text!.isEmpty {
-            btnSignIn.isEnabled = true
-        } else {
-            btnSignIn.isEnabled = false
-        }
+        presenter.validateInput(txtEmail.text!, txtPassword.text!)
     }
     
     // MARK: - IBActions
     @IBAction func btnSignInAction(_ sender: UIButton) {
-        
+        presenter.performSignIn(email: txtEmail.text!, password: txtPassword.text!)
     }
     
     @IBAction func btnGoogleSignInAction(_ sender: UIButton) {
@@ -44,5 +44,21 @@ class LoginVC: UIViewController {
     
     @IBAction func btnAppleSignInAction(_ sender: UIButton) {
         
+    }
+}
+
+// MARK: - LoginPresenterProtocol
+extension LoginVC: LoginPresenterProtocol {
+    
+    func didValidateInput(isValid: Bool) {
+        btnSignIn.isEnabled = isValid
+    }
+    
+    func onSignInSuccess() {
+        routeToHome()
+    }
+    
+    func onError(errorMessage: String) {
+        showAlert(message: errorMessage)
     }
 }
