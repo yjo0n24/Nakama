@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AuthModel {
+struct AuthModel: Codable {
     var userId: String = ""
     var email: String = ""
     var username: String = ""

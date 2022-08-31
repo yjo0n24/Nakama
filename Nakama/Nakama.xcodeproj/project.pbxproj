@@ -20,9 +20,17 @@
 		763CFD8A28BD0526003F6918 /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763CFD8928BD0526003F6918 /* BaseUIViewController.swift */; };
 		763CFD8D28BD0F3C003F6918 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763CFD8C28BD0F3C003F6918 /* LoginPresenterTests.swift */; };
 		763CFD8F28BD13DA003F6918 /* UserDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763CFD8E28BD13DA003F6918 /* UserDataHelper.swift */; };
+		763F2F4328BFAEC9008D5FD3 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F2F4228BFAEC9008D5FD3 /* HomePresenter.swift */; };
+		763F2F4528BFAF70008D5FD3 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763F2F4428BFAF6F008D5FD3 /* HomeService.swift */; };
 		7657121028BF03AF005FC807 /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657120F28BF03AF005FC807 /* RegistrationService.swift */; };
 		7657121428BF23E1005FC807 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657121328BF23E1005FC807 /* RoundedImageView.swift */; };
+		7657121728BF3E06005FC807 /* PostEditorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7657121628BF3E06005FC807 /* PostEditorVC.xib */; };
+		7657121928BF416E005FC807 /* PostEditorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657121828BF416E005FC807 /* PostEditorVC.swift */; };
 		766489ED28B924D900F679F5 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766489EC28B924D900F679F5 /* RegistrationPresenter.swift */; };
+		7667818428BF474200920A6A /* PostEditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667818328BF474200920A6A /* PostEditorPresenter.swift */; };
+		7667818628BF476400920A6A /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667818528BF476400920A6A /* PostModel.swift */; };
+		7667818828BF48D900920A6A /* PostEditorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7667818728BF48D900920A6A /* PostEditorService.swift */; };
+		767C3F4628BF94AC00476095 /* FirebaseStorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767C3F4528BF94AC00476095 /* FirebaseStorageHelper.swift */; };
 		767CC83C28B9C1A500955EEF /* TimelinePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CC83A28B9C1A500955EEF /* TimelinePostCell.swift */; };
 		767CC83D28B9C1A500955EEF /* TimelinePostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767CC83B28B9C1A500955EEF /* TimelinePostCell.xib */; };
 		767CC83F28B9CA2800955EEF /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CC83E28B9CA2800955EEF /* LoginPresenter.swift */; };
@@ -79,9 +87,17 @@
 		763CFD8928BD0526003F6918 /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
 		763CFD8C28BD0F3C003F6918 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
 		763CFD8E28BD13DA003F6918 /* UserDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataHelper.swift; sourceTree = "<group>"; };
+		763F2F4228BFAEC9008D5FD3 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		763F2F4428BFAF6F008D5FD3 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		7657120F28BF03AF005FC807 /* RegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationService.swift; sourceTree = "<group>"; };
 		7657121328BF23E1005FC807 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
+		7657121628BF3E06005FC807 /* PostEditorVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostEditorVC.xib; sourceTree = "<group>"; };
+		7657121828BF416E005FC807 /* PostEditorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorVC.swift; sourceTree = "<group>"; };
 		766489EC28B924D900F679F5 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		7667818328BF474200920A6A /* PostEditorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorPresenter.swift; sourceTree = "<group>"; };
+		7667818528BF476400920A6A /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		7667818728BF48D900920A6A /* PostEditorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorService.swift; sourceTree = "<group>"; };
+		767C3F4528BF94AC00476095 /* FirebaseStorageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageHelper.swift; sourceTree = "<group>"; };
 		767CC83A28B9C1A500955EEF /* TimelinePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelinePostCell.swift; sourceTree = "<group>"; };
 		767CC83B28B9C1A500955EEF /* TimelinePostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelinePostCell.xib; sourceTree = "<group>"; };
 		767CC83E28B9CA2800955EEF /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
@@ -160,6 +176,7 @@
 				7636442228B907B50007863A /* SharedExtensions.swift */,
 				7636442028B906D60007863A /* StringConstants.swift */,
 				763CFD8E28BD13DA003F6918 /* UserDataHelper.swift */,
+				767C3F4528BF94AC00476095 /* FirebaseStorageHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -176,7 +193,9 @@
 			isa = PBXGroup;
 			children = (
 				767CC83928B9C0EF00955EEF /* TableViewCells */,
+				763F2F4428BFAF6F008D5FD3 /* HomeService.swift */,
 				763A472828B9BF4B00AC7D23 /* HomeVC.swift */,
+				763F2F4228BFAEC9008D5FD3 /* HomePresenter.swift */,
 				768F59FA28BB5D6100D5222D /* ProfileVC.swift */,
 				76999EDE28B9D31F00246E2E /* Home.storyboard */,
 			);
@@ -189,6 +208,18 @@
 				763CFD8C28BD0F3C003F6918 /* LoginPresenterTests.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		7657121528BF3DAA005FC807 /* PostEditor */ = {
+			isa = PBXGroup;
+			children = (
+				7667818728BF48D900920A6A /* PostEditorService.swift */,
+				7667818528BF476400920A6A /* PostModel.swift */,
+				7657121828BF416E005FC807 /* PostEditorVC.swift */,
+				7667818328BF474200920A6A /* PostEditorPresenter.swift */,
+				7657121628BF3E06005FC807 /* PostEditorVC.xib */,
+			);
+			path = PostEditor;
 			sourceTree = "<group>";
 		};
 		767CC83928B9C0EF00955EEF /* TableViewCells */ = {
@@ -229,6 +260,7 @@
 				76361E8A28B64A8200B13A1D /* Utils */,
 				76FDAE7628B5189700491F78 /* Login */,
 				763A472528B9BC8900AC7D23 /* Home */,
+				7657121528BF3DAA005FC807 /* PostEditor */,
 				7636441D28B900B10007863A /* Resources */,
 				76AC58D428B50BB90064DC07 /* AppDelegate.swift */,
 				76AC58D628B50BB90064DC07 /* SceneDelegate.swift */,
@@ -403,6 +435,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7657121728BF3E06005FC807 /* PostEditorVC.xib in Resources */,
 				76AC58E128B50BBB0064DC07 /* LaunchScreen.storyboard in Resources */,
 				767CC83D28B9C1A500955EEF /* TimelinePostCell.xib in Resources */,
 				76999EDF28B9D31F00246E2E /* Home.storyboard in Resources */,
@@ -547,18 +580,25 @@
 				763CFD8A28BD0526003F6918 /* BaseUIViewController.swift in Sources */,
 				76361E8E28B6573600B13A1D /* LoginVC.swift in Sources */,
 				76FDAE7B28B5230500491F78 /* RoundedButton.swift in Sources */,
+				7657121928BF416E005FC807 /* PostEditorVC.swift in Sources */,
 				7636442128B906D60007863A /* StringConstants.swift in Sources */,
 				767CC83C28B9C1A500955EEF /* TimelinePostCell.swift in Sources */,
+				767C3F4628BF94AC00476095 /* FirebaseStorageHelper.swift in Sources */,
 				763A472928B9BF4B00AC7D23 /* HomeVC.swift in Sources */,
+				7667818828BF48D900920A6A /* PostEditorService.swift in Sources */,
 				7636442328B907B50007863A /* SharedExtensions.swift in Sources */,
+				763F2F4528BFAF70008D5FD3 /* HomeService.swift in Sources */,
 				767CC83F28B9CA2800955EEF /* LoginPresenter.swift in Sources */,
 				7657121028BF03AF005FC807 /* RegistrationService.swift in Sources */,
+				7667818628BF476400920A6A /* PostModel.swift in Sources */,
 				7657121428BF23E1005FC807 /* RoundedImageView.swift in Sources */,
 				7636442528B90CAA0007863A /* SharedConstants.swift in Sources */,
 				7636207828BB989600AE2697 /* AuthModel.swift in Sources */,
 				768F59FB28BB5D6100D5222D /* ProfileVC.swift in Sources */,
+				7667818428BF474200920A6A /* PostEditorPresenter.swift in Sources */,
 				763CFD8F28BD13DA003F6918 /* UserDataHelper.swift in Sources */,
 				76EB6A8028B665A00086C92C /* SharedEnums.swift in Sources */,
+				763F2F4328BFAEC9008D5FD3 /* HomePresenter.swift in Sources */,
 				76361E9028B6577400B13A1D /* RegistrationVC.swift in Sources */,
 				76AC58D728B50BB90064DC07 /* SceneDelegate.swift in Sources */,
 			);

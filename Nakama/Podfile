@@ -9,6 +9,7 @@ target 'Nakama' do
   pod 'FirebaseAnalytics'
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
+  pod 'FirebaseStorage'
 
   target 'NakamaTests' do
     inherit! :search_paths

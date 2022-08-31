@@ -159,13 +159,25 @@
                                     <outlet property="delegate" destination="jnU-YJ-lCe" id="RHG-98-2om"/>
                                 </connections>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGG-Lg-goL">
+                                <rect key="frame" x="334.5" y="715" width="60" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="HXO-wM-Znw"/>
+                                    <constraint firstAttribute="height" constant="60" id="arF-dM-AIO"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemMintColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" backgroundImage="pencil.circle.fill" catalog="system"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Kpc-PY-9FT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="HnJ-n0-fNe" firstAttribute="top" secondItem="Kpc-PY-9FT" secondAttribute="top" id="Yvr-hj-AIP"/>
                             <constraint firstItem="Kpc-PY-9FT" firstAttribute="bottom" secondItem="HnJ-n0-fNe" secondAttribute="bottom" id="a7V-kB-bvf"/>
+                            <constraint firstItem="Kpc-PY-9FT" firstAttribute="bottom" secondItem="EGG-Lg-goL" secondAttribute="bottom" multiplier="1.05" id="itT-Ao-SKr"/>
                             <constraint firstItem="Kpc-PY-9FT" firstAttribute="trailing" secondItem="HnJ-n0-fNe" secondAttribute="trailing" id="kLu-Li-D5m"/>
+                            <constraint firstItem="Kpc-PY-9FT" firstAttribute="trailing" secondItem="EGG-Lg-goL" secondAttribute="trailing" multiplier="1.05" id="ox4-Gt-VId"/>
                             <constraint firstItem="HnJ-n0-fNe" firstAttribute="leading" secondItem="Kpc-PY-9FT" secondAttribute="leading" id="w9r-h5-306"/>
                         </constraints>
                     </view>
@@ -198,14 +210,29 @@
                                     <outlet property="delegate" destination="ZAe-ws-rRD" id="uq4-zV-p9d"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmz-5h-Crk">
+                                <rect key="frame" x="334.5" y="715" width="60" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="8GA-OA-pE4"/>
+                                    <constraint firstAttribute="height" constant="60" id="GSK-jI-bf2"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemMintColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" backgroundImage="pencil.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="btnCreatePostAction:" destination="ZAe-ws-rRD" eventType="touchUpInside" id="2qN-Ny-GZS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Bo-od-rrs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2Bo-od-rrs" firstAttribute="bottom" secondItem="D1g-fd-X02" secondAttribute="bottom" id="FCV-D6-eF1"/>
                             <constraint firstItem="D1g-fd-X02" firstAttribute="top" secondItem="2Bo-od-rrs" secondAttribute="top" id="GBz-pm-Afd"/>
+                            <constraint firstItem="2Bo-od-rrs" firstAttribute="bottom" secondItem="cmz-5h-Crk" secondAttribute="bottom" multiplier="1.05" id="Qcf-Lf-RiF"/>
                             <constraint firstItem="2Bo-od-rrs" firstAttribute="trailing" secondItem="D1g-fd-X02" secondAttribute="trailing" id="S3w-Oe-OGr"/>
                             <constraint firstItem="D1g-fd-X02" firstAttribute="leading" secondItem="2Bo-od-rrs" secondAttribute="leading" id="eBg-ue-X2N"/>
+                            <constraint firstItem="2Bo-od-rrs" firstAttribute="trailing" secondItem="cmz-5h-Crk" secondAttribute="trailing" multiplier="1.05" id="mS5-3U-7hX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="tab-bar-home" id="Gew-QW-lU1"/>
@@ -246,6 +273,7 @@
     </designables>
     <resources>
         <image name="lemongrab-profile" width="341" height="512"/>
+        <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
         <image name="settings" width="25" height="25"/>
         <image name="tab-bar-home" width="25" height="25"/>
         <image name="tab-bar-profile" width="25" height="25"/>

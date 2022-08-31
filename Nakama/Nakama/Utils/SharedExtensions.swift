@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import UIKit
 
-// MARK: - String extension
+// MARK: - String
 extension String {
     var localized: String {
         return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
@@ -22,4 +23,22 @@ extension String {
 // MARK: - NotificationCenter
 extension Notification.Name {
     static let setRootVC = Notification.Name("setRootVC")
+}
+
+// MARK: - Encodable
+extension Encodable {
+    subscript(key: String) -> Any? {
+        return dictionary[key]
+    }
+    
+    var dictionary: [String: Any] {
+        return (try? JSONSerialization.jsonObject(with: JSONEncoder().encode(self))) as? [String: Any] ?? [:]
+    }
+}
+
+// MARK: - UIImage
+extension UIImage {
+    var jpegData: Data? {
+        self.jpegData(compressionQuality: 1)
+    }
 }

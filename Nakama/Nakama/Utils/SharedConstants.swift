@@ -34,4 +34,17 @@ struct SharedConstants {
         static let email = "userEmail"
         static let username = "username"
     }
+    
+    struct FirestoreCollection {
+        static let posts = "posts"
+    }
+    
+    struct FirebaseStorageRef {
+        static let users = "userImages/%@"
+        static let posts = "postImages/%@"
+    }
+    
+    struct DateFormat {
+        static let postCreatedDate = "dd/MM/yyyy hh:mm:ss"
+    }
 }

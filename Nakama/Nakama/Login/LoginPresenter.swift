@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import FirebaseCore
 
 // MARK: - Protocol
 protocol LoginPresenterProtocol: AnyObject {

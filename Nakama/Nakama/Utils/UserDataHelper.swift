@@ -23,7 +23,7 @@ class UserDataHelper {
         var model = AuthModel()
         model.userId = defaults.string(forKey: SharedConstants.UserDefaultsKey.userId) ?? ""
         model.email = defaults.string(forKey: SharedConstants.UserDefaultsKey.email) ?? ""
-        model.email = defaults.string(forKey: SharedConstants.UserDefaultsKey.username) ?? ""
+        model.username = defaults.string(forKey: SharedConstants.UserDefaultsKey.username) ?? ""
         return model
     }
     
