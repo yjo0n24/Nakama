@@ -12,9 +12,20 @@ import FirebaseAuth
 
 class LoginService {
     
-    func performSignIn(email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> Void) {
+    func performSignIn(email: String, password: String, completion: @escaping (AuthModel?, Error?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-            completion(result, error)
+            guard let user = result?.user else {
+                completion(nil, error)
+                return
+            }
+            
+            var model = AuthModel()
+            model.userId = user.uid
+            model.email = user.email ?? ""
+            model.username = user.displayName ?? ""
+            UserDataHelper().setLoginInfo(model)
+            
+            completion(model, error)
         }
     }
 }

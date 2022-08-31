@@ -31,15 +31,8 @@ class LoginPresenter {
         loginService.performSignIn(email: email, password: password, completion: { [weak self] (result, error) in
             guard let self = self else { return }
             
-            if let result = result {
-                let loginModel = LoginModel(
-                    userId: result.user.uid,
-                    email: result.user.email ?? "",
-                    username: result.additionalUserInfo?.username ?? ""
-                )
-                UserDataHelper().setLoginInfo(loginModel)
+            if let _ = result {
                 self.delegate?.onSignInSuccess()
-                
             } else {
                 if let error = error {
                     self.delegate?.onError(errorMessage: error.localizedDescription)

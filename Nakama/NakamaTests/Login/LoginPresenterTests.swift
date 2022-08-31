@@ -1,14 +1,14 @@
 //
-//  NakamaTests.swift
+//  LoginPresenterTests.swift
 //  NakamaTests
 //
-//  Created by Yew Joon Wong on 23/08/2022.
+//  Created by Yew Joon Wong on 29/08/2022.
 //
 
 import XCTest
 @testable import Nakama
 
-class NakamaTests: XCTestCase {
+class LoginPresenterTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

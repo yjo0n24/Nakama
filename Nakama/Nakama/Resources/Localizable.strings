@@ -9,6 +9,7 @@
 // MARK: - General
 "BTN_NEXT" = "Next";
 "BTN_OK" = "OK";
+"BTN_LATER" = "Later";
 
 // MARK: - Errors
 "ERROR_TITLE_GENERAL" = "Error";
@@ -23,9 +24,9 @@
 // MARK: - Registration
 "REGISTER_LBL_STEP1_TITLE" = "Let's get you started. Firstly, tell us your name.";
 "REGISTER_LBL_STEP1_DESC" = "This will be the name displayed on your profile that other people will see!";
-"REGISTER_LBL_STEP2_TITLE" = "Next, tell us your email address";
-"REGISTER_LBL_STEP2_DESC" = "We'll send a verification code to your email upon signing up.";
-"REGISTER_LBL_STEP3_TITLE" = "Lastly, set your password.";
+"REGISTER_LBL_STEP2_TITLE" = "Next, choose a profile image";
+"REGISTER_LBL_STEP2_DESC" = "This will be the image displayed on your profile";
+"REGISTER_LBL_STEP3_TITLE" = "Lastly, fill up your credentials.";
 "REGISTER_LBL_STEP3_DESC" = "Your password should contain lowercase, uppercase, numeric and special characters. Keep it secure!";
 "REGISTER_TXT_PLACEHOLDER_USERNAME" = "Username";
 "REGISTER_TXT_PLACEHOLDER_EMAIL" = "Email";

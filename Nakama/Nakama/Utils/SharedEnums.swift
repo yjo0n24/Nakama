@@ -9,6 +9,6 @@ import Foundation
 
 enum RegistrationStepType {
     case username
-    case email
-    case password
+    case image
+    case credentials
 }

@@ -12,6 +12,7 @@ struct StringConstants {
     struct General {
         static let btnNext = "BTN_NEXT"
         static let btnOk = "BTN_OK"
+        static let btnLater = "BTN_LATER"
     }
     
     struct Error {

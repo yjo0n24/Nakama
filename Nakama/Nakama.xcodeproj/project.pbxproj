@@ -10,7 +10,7 @@
 		14620BFEC33F8ECC8D8FB166 /* Pods_Nakama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F162E9295CA7B5F250C9D4AA /* Pods_Nakama.framework */; };
 		76361E8E28B6573600B13A1D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76361E8D28B6573600B13A1D /* LoginVC.swift */; };
 		76361E9028B6577400B13A1D /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76361E8F28B6577400B13A1D /* RegistrationVC.swift */; };
-		7636207828BB989600AE2697 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636207728BB989500AE2697 /* LoginModel.swift */; };
+		7636207828BB989600AE2697 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636207728BB989500AE2697 /* AuthModel.swift */; };
 		7636207A28BB9BB900AE2697 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636207928BB9BB900AE2697 /* LoginService.swift */; };
 		7636441F28B9011F0007863A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7636441E28B9011F0007863A /* Localizable.strings */; };
 		7636442128B906D60007863A /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636442028B906D60007863A /* StringConstants.swift */; };
@@ -20,12 +20,12 @@
 		763CFD8A28BD0526003F6918 /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763CFD8928BD0526003F6918 /* BaseUIViewController.swift */; };
 		763CFD8D28BD0F3C003F6918 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763CFD8C28BD0F3C003F6918 /* LoginPresenterTests.swift */; };
 		763CFD8F28BD13DA003F6918 /* UserDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763CFD8E28BD13DA003F6918 /* UserDataHelper.swift */; };
+		7657121028BF03AF005FC807 /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657120F28BF03AF005FC807 /* RegistrationService.swift */; };
+		7657121428BF23E1005FC807 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7657121328BF23E1005FC807 /* RoundedImageView.swift */; };
 		766489ED28B924D900F679F5 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766489EC28B924D900F679F5 /* RegistrationPresenter.swift */; };
 		767CC83C28B9C1A500955EEF /* TimelinePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CC83A28B9C1A500955EEF /* TimelinePostCell.swift */; };
 		767CC83D28B9C1A500955EEF /* TimelinePostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767CC83B28B9C1A500955EEF /* TimelinePostCell.xib */; };
 		767CC83F28B9CA2800955EEF /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767CC83E28B9CA2800955EEF /* LoginPresenter.swift */; };
-		7683603C28B9185700014A3A /* BetterTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7683603B28B9185700014A3A /* BetterTextField.swift */; };
-		7683603E28B9186300014A3A /* BetterTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7683603D28B9186300014A3A /* BetterTextField.xib */; };
 		768F59FB28BB5D6100D5222D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F59FA28BB5D6100D5222D /* ProfileVC.swift */; };
 		76999EDF28B9D31F00246E2E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76999EDE28B9D31F00246E2E /* Home.storyboard */; };
 		76AC58D528B50BB90064DC07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AC58D428B50BB90064DC07 /* AppDelegate.swift */; };
@@ -69,7 +69,7 @@
 		52750940D2EAB55F0B57B322 /* Pods-NakamaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NakamaTests.debug.xcconfig"; path = "Target Support Files/Pods-NakamaTests/Pods-NakamaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		76361E8D28B6573600B13A1D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		76361E8F28B6577400B13A1D /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
-		7636207728BB989500AE2697 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		7636207728BB989500AE2697 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		7636207928BB9BB900AE2697 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		7636441E28B9011F0007863A /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		7636442028B906D60007863A /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
@@ -79,12 +79,12 @@
 		763CFD8928BD0526003F6918 /* BaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
 		763CFD8C28BD0F3C003F6918 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
 		763CFD8E28BD13DA003F6918 /* UserDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataHelper.swift; sourceTree = "<group>"; };
+		7657120F28BF03AF005FC807 /* RegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationService.swift; sourceTree = "<group>"; };
+		7657121328BF23E1005FC807 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		766489EC28B924D900F679F5 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		767CC83A28B9C1A500955EEF /* TimelinePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelinePostCell.swift; sourceTree = "<group>"; };
 		767CC83B28B9C1A500955EEF /* TimelinePostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelinePostCell.xib; sourceTree = "<group>"; };
 		767CC83E28B9CA2800955EEF /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
-		7683603B28B9185700014A3A /* BetterTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterTextField.swift; sourceTree = "<group>"; };
-		7683603D28B9186300014A3A /* BetterTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BetterTextField.xib; sourceTree = "<group>"; };
 		768F59FA28BB5D6100D5222D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		76999EDE28B9D31F00246E2E /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		76AC58D128B50BB90064DC07 /* Nakama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nakama.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,12 +262,13 @@
 		76FDAE7628B5189700491F78 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				7636207728BB989500AE2697 /* AuthModel.swift */,
 				7636207928BB9BB900AE2697 /* LoginService.swift */,
-				7636207728BB989500AE2697 /* LoginModel.swift */,
 				76361E8D28B6573600B13A1D /* LoginVC.swift */,
 				767CC83E28B9CA2800955EEF /* LoginPresenter.swift */,
 				76361E8F28B6577400B13A1D /* RegistrationVC.swift */,
 				766489EC28B924D900F679F5 /* RegistrationPresenter.swift */,
+				7657120F28BF03AF005FC807 /* RegistrationService.swift */,
 				76FDAE7728B518DD00491F78 /* Login.storyboard */,
 			);
 			path = Login;
@@ -278,8 +279,7 @@
 			children = (
 				763CFD8928BD0526003F6918 /* BaseUIViewController.swift */,
 				76FDAE7A28B5230500491F78 /* RoundedButton.swift */,
-				7683603B28B9185700014A3A /* BetterTextField.swift */,
-				7683603D28B9186300014A3A /* BetterTextField.xib */,
+				7657121328BF23E1005FC807 /* RoundedImageView.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -405,7 +405,6 @@
 			files = (
 				76AC58E128B50BBB0064DC07 /* LaunchScreen.storyboard in Resources */,
 				767CC83D28B9C1A500955EEF /* TimelinePostCell.xib in Resources */,
-				7683603E28B9186300014A3A /* BetterTextField.xib in Resources */,
 				76999EDF28B9D31F00246E2E /* Home.storyboard in Resources */,
 				7636441F28B9011F0007863A /* Localizable.strings in Resources */,
 				76AC590528B50CC90064DC07 /* GoogleService-Info.plist in Resources */,
@@ -553,9 +552,10 @@
 				763A472928B9BF4B00AC7D23 /* HomeVC.swift in Sources */,
 				7636442328B907B50007863A /* SharedExtensions.swift in Sources */,
 				767CC83F28B9CA2800955EEF /* LoginPresenter.swift in Sources */,
-				7683603C28B9185700014A3A /* BetterTextField.swift in Sources */,
+				7657121028BF03AF005FC807 /* RegistrationService.swift in Sources */,
+				7657121428BF23E1005FC807 /* RoundedImageView.swift in Sources */,
 				7636442528B90CAA0007863A /* SharedConstants.swift in Sources */,
-				7636207828BB989600AE2697 /* LoginModel.swift in Sources */,
+				7636207828BB989600AE2697 /* AuthModel.swift in Sources */,
 				768F59FB28BB5D6100D5222D /* ProfileVC.swift in Sources */,
 				763CFD8F28BD13DA003F6918 /* UserDataHelper.swift in Sources */,
 				76EB6A8028B665A00086C92C /* SharedEnums.swift in Sources */,

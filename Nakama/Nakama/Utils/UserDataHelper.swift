@@ -13,17 +13,18 @@ class UserDataHelper {
     let defaults = UserDefaults.standard
     
     // MARK: - Methods
-    func setLoginInfo(_ model: LoginModel) {
+    func setLoginInfo(_ model: AuthModel) {
         defaults.set(model.userId, forKey: SharedConstants.UserDefaultsKey.userId)
         defaults.set(model.email, forKey: SharedConstants.UserDefaultsKey.email)
         defaults.set(model.username, forKey: SharedConstants.UserDefaultsKey.username)
     }
     
-    func getLoginInfo() -> LoginModel {
-        let userId = defaults.string(forKey: SharedConstants.UserDefaultsKey.userId) ?? ""
-        let email = defaults.string(forKey: SharedConstants.UserDefaultsKey.email) ?? ""
-        let username = defaults.string(forKey: SharedConstants.UserDefaultsKey.username) ?? ""
-        return LoginModel(userId: userId, email: email, username: username)
+    func getLoginInfo() -> AuthModel {
+        var model = AuthModel()
+        model.userId = defaults.string(forKey: SharedConstants.UserDefaultsKey.userId) ?? ""
+        model.email = defaults.string(forKey: SharedConstants.UserDefaultsKey.email) ?? ""
+        model.email = defaults.string(forKey: SharedConstants.UserDefaultsKey.username) ?? ""
+        return model
     }
     
     func deleteLoginInfo() {
