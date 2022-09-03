@@ -12,3 +12,9 @@ enum RegistrationStepType {
     case image
     case credentials
 }
+
+enum FormErrorType {
+    case emailInvalid
+    case passwordInvalid
+    case passwordMismatch
+}

@@ -10,12 +10,14 @@ import UIKit
 class LoginVC: BaseUIViewController {
     
     // MARK: - IBOutlets
+    @IBOutlet weak var emailView: UIStackView!
     @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var lblEmailError: UILabel!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var btnSignIn: RoundedButton!
     
     // MARK: - Variables
-    private let presenter: LoginPresenter = LoginPresenter()
+    private let presenter: LoginPresenter = LoginPresenter(service: LoginService())
     
     // MARK: - Methods
     override func viewDidLoad() {
@@ -50,10 +52,21 @@ class LoginVC: BaseUIViewController {
 // MARK: - LoginPresenterProtocol
 extension LoginVC: LoginPresenterProtocol {
     
-    func didValidateInput(isValid: Bool) {
+    // Form validation
+    func onFormValidate(isValid: Bool) {
         btnSignIn.isEnabled = isValid
     }
     
+    func showEmailFormatError(errorMessage: String) {
+        lblEmailError.text = errorMessage
+        lblEmailError.isHidden = false
+    }
+    
+    func hideEmailFormatError() {
+        lblEmailError.isHidden = true
+    }
+    
+    // Service callback
     func onSignInSuccess() {
         routeToHome()
     }

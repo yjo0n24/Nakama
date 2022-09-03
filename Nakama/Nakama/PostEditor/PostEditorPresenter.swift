@@ -21,15 +21,15 @@ class PostEditorPresenter {
     weak var delegate: PostEditorPresenterProtocol?
     
     // MARK: - Methods
-    func validateInput(_ input: String) {
-        delegate?.didValidateInput(isValid: !input.isEmpty)
+    func validateInput(_ input: String, imageData: Data?) {
+        delegate?.didValidateInput(isValid: (!input.isEmpty || imageData != nil))
     }
     
     func performCreatePost(textContent: String, imageData: Data?) {
         if let imageData = imageData {
             FirebaseStorageHelper.shared.performSaveImage(
                 imageData,
-                refPath: SharedConstants.FirebaseStorageRef.posts,
+                refPath: SharedConstants.Firestore.Storage.posts,
                 completion: { [weak self] (imageUrl, error) in
                 
                 guard let self = self else { return }
@@ -49,21 +49,19 @@ class PostEditorPresenter {
         let currentUser = UserDataHelper().getLoginInfo()
         guard !currentUser.userId.isEmpty else { return }
         
+        // User info
         let userInfo = PostUserInfo(
             userId: currentUser.userId,
             username: currentUser.username,
             profileImage: currentUser.profileImage
         )
         
-        let df = DateFormatter()
-        df.dateFormat = SharedConstants.DateFormat.postCreatedDate
-        let createdDate = df.string(from: Date())
-        
+        // Post info
         let model = PostModel(
             userInfo: userInfo,
             textContent: textContent,
             imageUrl: imageUrl,
-            createdDate: createdDate
+            createdDate: Date()
         )
         
         postEditorService.performCreatePost(model, completion: { [weak self] error in

@@ -10,6 +10,9 @@
 "BTN_NEXT" = "Next";
 "BTN_OK" = "OK";
 "BTN_LATER" = "Later";
+"BTN_DELETE" = "Delete";
+"BTN_CONTINUE" = "Continue";
+"BTN_CANCEL" = "Cancel";
 
 // MARK: - Errors
 "ERROR_TITLE_GENERAL" = "Error";
@@ -20,6 +23,9 @@
 "LOGIN_LBL_SIGN_UP" = "Don't have an account yet?";
 "LOGIN_BTN_SIGN_IN" = "Sign In";
 "LOGIN_BTN_SIGN_UP" = "Sign Up";
+"LOGIN_LBL_EMAIL_INVALID_ERROR" = "Please enter a valid email";
+"LOGIN_LBL_PASSWORD_INVALID_ERROR" = "Please enter a valid password";
+"LOGIN_LBL_PASSWORD_MISMATCH_ERROR" = "Passwords do not match";
 
 // MARK: - Registration
 "REGISTER_LBL_STEP1_TITLE" = "Let's get you started. Firstly, tell us your name.";
@@ -38,4 +44,11 @@
 
 // MARK: - Profile
 "PROFILE_LBL_POSTS_HEADER" = "My Posts";
+"PROFILE_ALERT_DELETE_POST_TITLE" = "Delete Post";
+"PROFILE_ALERT_DELETE_POST_MESSAGE" = "Are you sure you want to delete this post? It will be gone forever (A long time!).";
+"PROFILE_ALERT_DELETE_POST_SUCCESS_TITLE" = "Post Deleted";
+"PROFILE_ALERT_DELETE_POST_SUCCESS_MESSAGE" = "Your post has been deleted!";
+"PROFILE_BTN_SIGN_LOGOUT" = "Logout";
 
+// MARK: - Post Editor
+"EDITOR_TXT_PLACEHOLDER" = "Express yourself here...";

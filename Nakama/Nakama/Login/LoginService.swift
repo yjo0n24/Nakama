@@ -23,6 +23,7 @@ class LoginService {
             model.userId = user.uid
             model.email = user.email ?? ""
             model.username = user.displayName ?? ""
+            model.profileImage = user.photoURL?.absoluteString
             UserDataHelper().setLoginInfo(model)
             
             completion(model, error)

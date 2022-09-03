@@ -19,7 +19,16 @@ class FirebaseStorageHelper {
         let postImageRef = storageRef.child(postImageRefPath)
         
         postImageRef.putData(imageData, completion: { (metadata, error) in
-            completion(postImageRefPath, error)
+            postImageRef.downloadURL(completion: { (downloadUrl, error) in
+                completion(downloadUrl?.absoluteString ?? "", error)
+            })
         })
+    }
+    
+    func performGetImage(from path: String, completion: @escaping (Data?, Error?) -> Void) {
+        let storageRef = storage.reference(withPath: path)
+        storageRef.getData(maxSize: 1 * 1024 * 1024) { (imageData, error) in
+            completion(imageData, error)
+        }
     }
 }

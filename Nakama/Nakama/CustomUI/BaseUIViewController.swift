@@ -19,6 +19,17 @@ class BaseUIViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
+    func showAlert(title: String, message: String, actionTitle: String, completion: @escaping (UIAlertAction) -> Void) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: actionTitle, style: .destructive, handler: { action in
+            completion(action)
+        }))
+        alert.addAction(UIAlertAction(title: StringConstants.General.btnCancel.localized, style: .cancel, handler: { action in
+            completion(action)
+        }))
+        self.present(alert, animated: true)
+    }
+    
     func routeToHome() {
         let userInfo = [SharedConstants.Key.storyboardName: SharedConstants.StoryboardName.home]
         NotificationCenter.default.post(name: .setRootVC, object: nil, userInfo: userInfo)

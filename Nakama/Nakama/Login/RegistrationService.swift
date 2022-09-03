@@ -18,9 +18,14 @@ class RegistrationService {
                 completion(nil, error)
                 return
             }
+            
+            // Add additional user info
             let changeRequest = user.createProfileChangeRequest()
             changeRequest.displayName = model.username
-            //changeRequest.photoURL = ""
+            
+            if let profileImageUrl = URL(string: model.profileImage ?? "") {
+                changeRequest.photoURL = profileImageUrl
+            }
             
             changeRequest.commitChanges(completion: { error in
                 if let error = error {
@@ -30,6 +35,7 @@ class RegistrationService {
                     resultModel.userId = user.uid
                     resultModel.username = model.username
                     resultModel.email = user.email ?? ""
+                    resultModel.profileImage = user.photoURL?.absoluteString
                     UserDataHelper().setLoginInfo(resultModel)
                     
                     completion(model, nil)

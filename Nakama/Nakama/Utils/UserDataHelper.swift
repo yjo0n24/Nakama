@@ -17,6 +17,7 @@ class UserDataHelper {
         defaults.set(model.userId, forKey: SharedConstants.UserDefaultsKey.userId)
         defaults.set(model.email, forKey: SharedConstants.UserDefaultsKey.email)
         defaults.set(model.username, forKey: SharedConstants.UserDefaultsKey.username)
+        defaults.set(model.profileImage, forKey: SharedConstants.UserDefaultsKey.profileImage)
     }
     
     func getLoginInfo() -> AuthModel {
@@ -24,6 +25,7 @@ class UserDataHelper {
         model.userId = defaults.string(forKey: SharedConstants.UserDefaultsKey.userId) ?? ""
         model.email = defaults.string(forKey: SharedConstants.UserDefaultsKey.email) ?? ""
         model.username = defaults.string(forKey: SharedConstants.UserDefaultsKey.username) ?? ""
+        model.profileImage = defaults.string(forKey: SharedConstants.UserDefaultsKey.profileImage)
         return model
     }
     
@@ -31,5 +33,6 @@ class UserDataHelper {
         defaults.removeObject(forKey: SharedConstants.UserDefaultsKey.userId)
         defaults.removeObject(forKey: SharedConstants.UserDefaultsKey.email)
         defaults.removeObject(forKey: SharedConstants.UserDefaultsKey.username)
+        defaults.removeObject(forKey: SharedConstants.UserDefaultsKey.profileImage)
     }
 }

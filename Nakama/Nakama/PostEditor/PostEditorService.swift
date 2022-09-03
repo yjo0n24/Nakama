@@ -14,7 +14,11 @@ class PostEditorService {
     private let db = Firestore.firestore()
     
     func performCreatePost(_ model: PostModel, completion: @escaping (Error?) -> Void) {
-        db.collection(SharedConstants.FirestoreCollection.posts).addDocument(data: model.dictionary) { error in
+        let timestamp = Timestamp(date: model.createdDate)
+        var modelDict = model.dictionary
+        modelDict["createdDate"] = timestamp
+        
+        db.collection(SharedConstants.Firestore.Collection.posts).addDocument(data: model.dictionary) { error in
             completion(error)
         }
     }

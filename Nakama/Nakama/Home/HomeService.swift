@@ -14,19 +14,22 @@ class HomeService {
     private let db = Firestore.firestore()
     private var postsLastSnapshot: QueryDocumentSnapshot?
     
-    func performGetPublicPosts(refreshPosts: Bool, completion: @escaping ([PostModel], Error?) -> Void) {
-        let postsRef = db.collection(SharedConstants.FirestoreCollection.posts).limit(to: 15)
+    func performGetPublicPosts(refreshPosts: Bool, numOfPosts: Int, completion: @escaping ([PostModel], Error?) -> Void) {
+        var postsRef = db.collection(SharedConstants.Firestore.Collection.posts)
+            .limit(to: numOfPosts)
+            .order(by: "createdDate", descending: true)
         
         if refreshPosts {
             postsLastSnapshot = nil
         } else {
             if let postsLastSnapshot = postsLastSnapshot {
-                postsRef.start(afterDocument: postsLastSnapshot)
+                postsRef = postsRef.start(afterDocument: postsLastSnapshot)
             }
         }
         
         postsRef.addSnapshotListener({ [weak self] (snapshot, error) in
             guard let snapshot = snapshot else {
+                completion([], error)
                 return
             }
             if let lastSnapshot = snapshot.documents.last {

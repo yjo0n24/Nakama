@@ -9,7 +9,9 @@ import Foundation
 
 // MARK: - Protocol
 protocol LoginPresenterProtocol: AnyObject {
-    func didValidateInput(isValid: Bool)
+    func onFormValidate(isValid: Bool)
+    func showEmailFormatError(errorMessage: String)
+    func hideEmailFormatError()
     func onSignInSuccess()
     func onError(errorMessage: String)
 }
@@ -17,13 +19,31 @@ protocol LoginPresenterProtocol: AnyObject {
 class LoginPresenter {
     
     // MARK: - Variables
-    private let loginService: LoginService = LoginService()
+    private let loginService: LoginService!
     weak var delegate: LoginPresenterProtocol?
     
     // MARK: - Methods
+    init(service: LoginService) {
+        loginService = service
+    }
+    
     func validateInput(_ email: String, _ password: String) {
-        let isValid = (email.isValidFormat(with: SharedConstants.RegEx.email) && !password.isEmpty)
-        delegate?.didValidateInput(isValid: isValid)
+        var isValid = true
+        
+        // 1. Validate email format
+        if !email.isValidFormat(with: SharedConstants.RegEx.email) {
+            delegate?.showEmailFormatError(errorMessage: StringConstants.Registration.lblInvalidEmailError.localized)
+            isValid = false
+        } else {
+            delegate?.hideEmailFormatError()
+        }
+        
+        // 2. Validate password empty
+        if password.isEmpty {
+            isValid = false
+        }
+        
+        delegate?.onFormValidate(isValid: isValid)
     }
     
     func performSignIn(email: String, password: String) {

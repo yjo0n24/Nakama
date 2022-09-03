@@ -15,19 +15,25 @@ class RegistrationVC: BaseUIViewController {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
     @IBOutlet weak var txtUsername: UITextField!
+    @IBOutlet weak var emailView: UIStackView!
     @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var lblEmailError: UILabel!
+    @IBOutlet weak var passwordView: UIStackView!
     @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var lblPasswordError: UILabel!
+    @IBOutlet weak var confirmPasswordView: UIStackView!
     @IBOutlet weak var txtConfirmPassword: UITextField!
+    @IBOutlet weak var lblConfirmPasswordError: UILabel!
     @IBOutlet weak var imageSelectionView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var btnSelectImage: UIButton!
     @IBOutlet weak var btnNext: RoundedButton!
     
     // MARK: - Variables
-    private let presenter: RegistrationPresenter = RegistrationPresenter()
+    var presenter: RegistrationPresenter = RegistrationPresenter(service: RegistrationService())
     var stepType: RegistrationStepType = .username
     var username: String = ""
-    var profileImage: String?
+    private var imageData: Data?
     
     // MARK: - Methods
     override func viewDidLoad() {
@@ -43,9 +49,9 @@ class RegistrationVC: BaseUIViewController {
             lblDescription.text = StringConstants.Registration.lblStep1Desc.localized
             
             txtUsername.isHidden = false
-            txtEmail.isHidden = true
-            txtPassword.isHidden = true
-            txtConfirmPassword.isHidden = true
+            emailView.isHidden = true
+            passwordView.isHidden = true
+            confirmPasswordView.isHidden = true
             txtUsername.placeholder = StringConstants.Registration.txtPlaceholderUsername.localized
             txtUsername.addTarget(self, action: #selector(validateField), for: .editingChanged)
             
@@ -59,9 +65,9 @@ class RegistrationVC: BaseUIViewController {
             lblDescription.text = StringConstants.Registration.lblStep2Desc.localized
             
             txtUsername.isHidden = true
-            txtEmail.isHidden = true
-            txtPassword.isHidden = true
-            txtConfirmPassword.isHidden = true
+            emailView.isHidden = true
+            passwordView.isHidden = true
+            confirmPasswordView.isHidden = true
             
             imageSelectionView.isHidden = false
             
@@ -73,9 +79,9 @@ class RegistrationVC: BaseUIViewController {
             lblDescription.text = StringConstants.Registration.lblStep3Desc.localized
             
             txtUsername.isHidden = true
-            txtEmail.isHidden = false
-            txtPassword.isHidden = false
-            txtConfirmPassword.isHidden = false
+            emailView.isHidden = false
+            passwordView.isHidden = false
+            confirmPasswordView.isHidden = false
             txtEmail.placeholder = StringConstants.Registration.txtPlaceholderEmail.localized
             txtPassword.placeholder = StringConstants.Registration.txtPlaceholderPassword.localized
             txtConfirmPassword.placeholder = StringConstants.Registration.txtPlaceholderConfirmPassword.localized
@@ -88,6 +94,36 @@ class RegistrationVC: BaseUIViewController {
             btnNext.isEnabled = false
             btnNext.setTitle(StringConstants.Registration.btnFinish.localized, for: .normal)
         }
+    }
+    
+    private func showFieldErrors(for errorTypes: [FormErrorType]) {
+        if errorTypes.contains(.emailInvalid) {
+            lblEmailError.text = StringConstants.Registration.lblInvalidEmailError.localized
+            lblEmailError.isHidden = false
+        } else {
+            lblEmailError.isHidden = true
+        }
+        
+        if errorTypes.contains(.passwordInvalid) {
+            lblPasswordError.text = StringConstants.Registration.lblInvalidPasswordError.localized
+            lblPasswordError.isHidden = false
+        } else {
+            if errorTypes.contains(.passwordMismatch) {
+                lblPasswordError.text = StringConstants.Registration.lblPasswordMismatchError.localized
+                lblConfirmPasswordError.text = StringConstants.Registration.lblPasswordMismatchError.localized
+                lblPasswordError.isHidden = false
+                lblConfirmPasswordError.isHidden = false
+            } else {
+                lblPasswordError.isHidden = true
+                lblConfirmPasswordError.isHidden = true
+            }
+        }
+    }
+    
+    private func hideAllFieldErrors() {
+        lblEmailError.isHidden = true
+        lblPasswordError.isHidden = true
+        lblConfirmPasswordError.isHidden = true
     }
     
     private func showImagePicker() {
@@ -108,7 +144,6 @@ class RegistrationVC: BaseUIViewController {
             ).instantiateViewController(withIdentifier: SharedConstants.StoryboardId.registrationVC)
             
             guard let registrationVC = vc as? RegistrationVC else { return }
-            //registrationVC.stepType = stepType == .username ? .image : .credentials
             
             if stepType == .username {
                 registrationVC.stepType = .image
@@ -116,16 +151,18 @@ class RegistrationVC: BaseUIViewController {
             } else if stepType == .image {
                 registrationVC.stepType = .credentials
                 registrationVC.username = username
-                registrationVC.profileImage = profileImage
+                registrationVC.imageData = imageData
             }
             
             self.navigationController?.pushViewController(registrationVC, animated: true)
             
         } else {
-            presenter.performSignUp(username: username,
-                                  email: txtEmail.text!,
-                                  password: txtPassword.text!,
-                                  profileImage: profileImage)
+            presenter.performSignUp(
+                username: username,
+                email: txtEmail.text!,
+                password: txtPassword.text!,
+                imageData: imageData
+            )
         }
     }
     
@@ -152,7 +189,8 @@ class RegistrationVC: BaseUIViewController {
 // MARK: - RegistrationPresenterProtocol
 extension RegistrationVC: RegistrationPresenterProtocol {
     
-    func didValidateInput(isValid: Bool) {
+    func onFormValidate(isValid: Bool) {
+        hideAllFieldErrors()
         btnNext.isEnabled = isValid
     }
     
@@ -163,6 +201,11 @@ extension RegistrationVC: RegistrationPresenterProtocol {
     func onError(errorMessage: String) {
         showAlert(message: errorMessage)
     }
+    
+    func onErrorValidateCredentials(errorTypes: [FormErrorType]) {
+        showFieldErrors(for: errorTypes)
+        btnNext.isEnabled = false
+    }
 }
 
 // MARK: - PHPickerViewControllerDelegate
@@ -171,17 +214,30 @@ extension RegistrationVC: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         picker.dismiss(animated: true)
         
-        guard let provider = results.first?.itemProvider, provider.canLoadObject(ofClass: UIImage.self) else {
+        guard let provider = results.first?.itemProvider else {
             return
         }
         
-        provider.loadObject(ofClass: UIImage.self, completionHandler: { [weak self] (image, error) in
-            if let selectedImage = image as? UIImage {
-                DispatchQueue.main.async {
-                    self?.imageView.image = selectedImage
-                    self?.btnNext.setTitle(StringConstants.General.btnNext.localized, for: .normal)
+        if provider.canLoadObject(ofClass: UIImage.self) {
+            provider.loadObject(ofClass: UIImage.self, completionHandler: { [weak self] (image, error) in
+                if let selectedImage = image as? UIImage {
+                    DispatchQueue.main.async {
+                        self?.imageView.image = selectedImage
+                        self?.imageData = selectedImage.jpegData(compressionQuality: 0.8)
+                        self?.btnNext.setTitle(StringConstants.General.btnNext.localized, for: .normal)
+                    }
                 }
-            }
-        })
+            })
+        } else {
+            provider.loadDataRepresentation(forTypeIdentifier: "public.image", completionHandler: { [weak self] (data, error) in
+                if let data = data, let selectedImage = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.imageView.image = selectedImage
+                        self?.imageData = selectedImage.jpegData(compressionQuality: 0.8)
+                        self?.btnNext.setTitle(StringConstants.General.btnNext.localized, for: .normal)
+                    }
+                }
+            })
+        }
     }
 }

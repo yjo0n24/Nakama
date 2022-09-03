@@ -763,6 +763,8 @@ PODS:
     - Libuv-gRPC (= 0.0.10)
   - gRPC-Core/Interface (1.44.0)
   - GTMSessionFetcher/Core (2.1.0)
+  - iOSDropDown (0.4.0)
+  - Kingfisher (7.3.2)
   - leveldb-library (1.22.1)
   - Libuv-gRPC (0.0.10):
     - Libuv-gRPC/Implementation (= 0.0.10)
@@ -782,6 +784,8 @@ DEPENDENCIES:
   - FirebaseAuth
   - FirebaseFirestore
   - FirebaseStorage
+  - iOSDropDown
+  - Kingfisher (~> 7.0)
 
 SPEC REPOS:
   trunk:
@@ -805,6 +809,8 @@ SPEC REPOS:
     - "gRPC-C++"
     - gRPC-Core
     - GTMSessionFetcher
+    - iOSDropDown
+    - Kingfisher
     - leveldb-library
     - Libuv-gRPC
     - nanopb
@@ -831,11 +837,13 @@ SPEC CHECKSUMS:
   "gRPC-C++": 9675f953ace2b3de7c506039d77be1f2e77a8db2
   gRPC-Core: 943e491cb0d45598b0b0eb9e910c88080369290b
   GTMSessionFetcher: ffbb25ec00ebcb5201adab0a56d808f6f1902d9f
+  iOSDropDown: ce9daa584eaa5567cafc1b633e3cc7eb6d9cea42
+  Kingfisher: 0086ad83719761ba9b2cdaf6ef4d5b4878cbae23
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   Libuv-gRPC: 55e51798e14ef436ad9bc45d12d43b77b49df378
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
 
-PODFILE CHECKSUM: c5d213074117b2474b13a5fae6b444973c050e92
+PODFILE CHECKSUM: ff6f1c532765239d11f7c6dbdad3b8d513d14fe2
 
 COCOAPODS: 1.11.3

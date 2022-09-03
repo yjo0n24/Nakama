@@ -14,6 +14,7 @@ class PostEditorVC: BaseUIViewController {
     // MARK: - Outlets
     @IBOutlet weak var lblTextCount: UILabel!
     @IBOutlet weak var txtContent: UITextView!
+    @IBOutlet weak var imgAttachment: UIImageView!
     @IBOutlet weak var btnUploadImage: UIButton!
     @IBOutlet weak var btnPost: RoundedButton!
     
@@ -29,6 +30,9 @@ class PostEditorVC: BaseUIViewController {
     }
     
     private func initUI() {
+        txtContent.text = StringConstants.PostEditor.txtPlaceholder.localized
+        txtContent.textColor = .lightGray
+        imgAttachment.layer.cornerRadius = 10.0
         btnUploadImage.imageView?.contentMode = .scaleAspectFit
     }
     
@@ -38,40 +42,16 @@ class PostEditorVC: BaseUIViewController {
         pickerConfig.filter = .images
         
         let picker = PHPickerViewController(configuration: pickerConfig)
+        
         picker.delegate = self
         self.present(picker, animated: true)
     }
     
-    private func setTextAttachment(_ image: UIImage) {
-        guard let cgImage = image.cgImage else { return }
-        let scaleFactor = image.size.width / (txtContent.frame.size.width - 10)
-        let scaledImage = UIImage(cgImage: cgImage, scale: scaleFactor, orientation: .up)
-        
-        let attachment = NSTextAttachment()
-        attachment.image = scaledImage
-        let attrString = NSAttributedString(attachment: attachment)
-        let oriTextPos = txtContent.selectedRange.location
-        
-        txtContent.text = txtContent.text + "\n\n"
-        txtContent.textStorage.insert(attrString, at: txtContent.selectedRange.location)
-        txtContent.selectedRange = NSRange(location: oriTextPos, length: 0)
-    }
-    
-    private func removeTextAttachment() -> String {
-        var newText = txtContent.text ?? ""
-        
-        let enumRange = NSRange(location: 0, length: txtContent.attributedText.length)
-        txtContent.attributedText.enumerateAttribute(.attachment, in: enumRange, using: { (value, range, stop) in
-            if let attachment = value as? NSTextAttachment, attachment.image != nil {
-                guard let mutableAttrStr = txtContent.attributedText.mutableCopy() as? NSMutableAttributedString else {
-                    return
-                }
-                mutableAttrStr.replaceCharacters(in: range, with: "")
-                newText = mutableAttrStr.string
-            }
-        })
-        
-        return newText
+    private func attachImage(selectedImage: UIImage) {
+        imageData = selectedImage.jpegData(compressionQuality: 0.8)
+        imgAttachment.image = selectedImage
+        imgAttachment.isHidden = false
+        presenter.validateInput(txtContent.text ?? "", imageData: imageData)
     }
     
     @IBAction func btnCloseAction(_ sender: UIButton) {
@@ -83,8 +63,10 @@ class PostEditorVC: BaseUIViewController {
     }
     
     @IBAction func btnPostAction(_ sender: UIButton) {
-        // Remove attachment from text before posting
-        let textContent = removeTextAttachment()
+        var textContent = txtContent.text ?? ""
+        if txtContent.textColor == .lightGray {
+            textContent = ""
+        }
         presenter.performCreatePost(textContent: textContent, imageData: imageData)
     }
 }
@@ -108,9 +90,23 @@ extension PostEditorVC: PostEditorPresenterProtocol {
 // MARK: - UITextViewDelegate
 extension PostEditorVC: UITextViewDelegate {
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == .lightGray {
+            textView.text = nil
+            textView.textColor = .black
+        }
+    }
+    
     func textViewDidChange(_ textView: UITextView) {
         lblTextCount.text = "\(textView.text.count)/500"
-        presenter.validateInput(textView.text!)
+        presenter.validateInput(textView.text ?? "", imageData: imageData)
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = StringConstants.PostEditor.txtPlaceholder.localized
+            textView.textColor = .lightGray
+        }
     }
 }
 
@@ -120,17 +116,26 @@ extension PostEditorVC: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         picker.dismiss(animated: true)
         
-        guard let provider = results.first?.itemProvider, provider.canLoadObject(ofClass: UIImage.self) else {
+        guard let provider = results.first?.itemProvider else {
             return
         }
         
-        provider.loadObject(ofClass: UIImage.self, completionHandler: { [weak self] (image, error) in
-            if let selectedImage = image as? UIImage {
-                DispatchQueue.main.async {
-                    self?.imageData = selectedImage.jpegData(compressionQuality: 0.8)
-                    self?.setTextAttachment(selectedImage)
+        if provider.canLoadObject(ofClass: UIImage.self) {
+            provider.loadObject(ofClass: UIImage.self, completionHandler: { [weak self] (image, error) in
+                if let selectedImage = image as? UIImage {
+                    DispatchQueue.main.async {
+                        self?.attachImage(selectedImage: selectedImage)
+                    }
                 }
-            }
-        })
+            })
+        } else {
+            provider.loadDataRepresentation(forTypeIdentifier: "public.image", completionHandler: { [weak self] (data, error) in
+                if let data = data, let selectedImage = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.attachImage(selectedImage: selectedImage)
+                    }
+                }
+            })
+        }
     }
 }
