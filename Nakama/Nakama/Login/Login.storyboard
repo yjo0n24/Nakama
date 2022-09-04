@@ -334,6 +334,8 @@
                             <constraint firstItem="X6D-ck-QUH" firstAttribute="height" secondItem="3F8-gm-got" secondAttribute="height" multiplier="0.2" id="IXf-EF-mpL"/>
                             <constraint firstItem="uac-Ge-mVJ" firstAttribute="leading" secondItem="nTE-IL-6Eb" secondAttribute="leading" constant="25" id="KhT-gs-xj8"/>
                             <constraint firstItem="nTE-IL-6Eb" firstAttribute="trailing" secondItem="uac-Ge-mVJ" secondAttribute="trailing" constant="25" id="alc-nD-aoc"/>
+                            <constraint firstItem="nTE-IL-6Eb" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uac-Ge-mVJ" secondAttribute="bottom" id="gDr-Ht-MEw"/>
+                            <constraint firstItem="uac-Ge-mVJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="nTE-IL-6Eb" secondAttribute="top" id="qZs-NT-cOz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Cht-39-RB2"/>

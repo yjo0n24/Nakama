@@ -25,8 +25,6 @@ class ProfileVC: BaseUIViewController {
     private let presenter = ProfilePresenter(service: ProfileService())
     private let cellIdentifier = String(describing: TimelinePostCell.self)
     private var rowCount = 0
-    private var oriHeaderHeight: CGFloat = 0.0
-    private var headerStretchLimit: CGFloat = 0.0
     
     // MARK: - Methods
     override func viewDidLoad() {
@@ -44,8 +42,6 @@ class ProfileVC: BaseUIViewController {
     
     private func initUI() {
         cstHeaderViewHeight.constant = 0.25 * UIScreen.main.bounds.height
-        oriHeaderHeight = cstHeaderViewHeight.constant
-        headerStretchLimit = (0.1 * oriHeaderHeight) + oriHeaderHeight
         refreshControl.addTarget(self, action: #selector(refreshPosts), for: .valueChanged)
         tblTimeline.refreshControl = refreshControl
         
@@ -69,22 +65,6 @@ class ProfileVC: BaseUIViewController {
                 .cacheOriginalImage
            ],
            completionHandler: { _ in }
-        )
-    }
-    
-    private func animateHeader() {
-        cstHeaderViewHeight.constant = oriHeaderHeight
-        
-        UIView.animate(
-            withDuration: 0.4,
-            delay: 0.0,
-            usingSpringWithDamping: 0.7,
-            initialSpringVelocity: 0.5,
-            options: .curveEaseInOut,
-            animations: {
-                self.view.layoutIfNeeded()
-            },
-            completion: nil
         )
     }
     
@@ -216,28 +196,6 @@ extension ProfileVC: ProfilePresenterProtocol {
             if self.refreshControl.isRefreshing {
                 self.refreshControl.endRefreshing()
             }
-        }
-    }
-}
-
-// MARK: - UIScrollViewDelegate
-extension ProfileVC: UIScrollViewDelegate {
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if scrollView.contentOffset.y < 0 && cstHeaderViewHeight.constant < headerStretchLimit {
-//            cstHeaderViewHeight.constant += abs(scrollView.contentOffset.y)
-//        }
-    }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if cstHeaderViewHeight.constant > oriHeaderHeight {
-            animateHeader()
-        }
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if cstHeaderViewHeight.constant > oriHeaderHeight {
-            animateHeader()
         }
     }
 }

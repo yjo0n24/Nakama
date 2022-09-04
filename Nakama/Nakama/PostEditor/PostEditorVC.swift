@@ -63,6 +63,7 @@ class PostEditorVC: BaseUIViewController {
         presenter.validateInput(txtContent.text ?? "", imageData: imageData)
     }
     
+    // MARK: - IBActions
     @IBAction func btnCloseAction(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
