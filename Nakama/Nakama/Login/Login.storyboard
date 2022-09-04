@@ -35,7 +35,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GV4-c6-hAr">
                                 <rect key="frame" x="25" y="88" width="364" height="774"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some inspiring quote to make friends..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6e-hf-HiP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A place where you can express yourself freely..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6e-hf-HiP">
                                         <rect key="frame" x="0.0" y="50" width="364" height="57.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
                                         <nil key="textColor"/>
@@ -75,7 +75,7 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KrZ-Rs-b00" customClass="RoundedButton" customModule="Nakama" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="297.5" width="364" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                                        <color key="backgroundColor" red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="kFa-VO-RGa"/>
                                         </constraints>
@@ -94,55 +94,6 @@
                                             <action selector="btnSignInAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="VfK-g4-uJ5"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or continue with" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kw4-n2-N3S">
-                                        <rect key="frame" x="117.5" y="397.5" width="129" height="21.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="T7Q-G2-Ec1">
-                                        <rect key="frame" x="0.0" y="469" width="364" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCg-zx-dYY" customClass="RoundedButton" customModule="Nakama" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="174.5" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="Qbv-bl-ZPt"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Google">
-                                                    <color key="titleColor" systemColor="labelColor"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="btnGoogleSignInAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="kAX-9c-3im"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qul-Ap-UxK" customClass="RoundedButton" customModule="Nakama" customModuleProvider="target">
-                                                <rect key="frame" x="189.5" y="0.0" width="174.5" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="KH2-DO-uZQ"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Apple">
-                                                    <color key="titleColor" systemColor="labelColor"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="btnAppleSignInAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="57G-Lh-Kb3"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account yet?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAu-sf-iM4">
                                         <rect key="frame" x="0.0" y="703.5" width="206.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -165,14 +116,10 @@
                                 <constraints>
                                     <constraint firstItem="Mdc-9l-Wma" firstAttribute="leading" secondItem="GV4-c6-hAr" secondAttribute="leading" id="1hr-Im-l3b"/>
                                     <constraint firstItem="KrZ-Rs-b00" firstAttribute="leading" secondItem="GV4-c6-hAr" secondAttribute="leading" id="HNd-0l-Vac"/>
-                                    <constraint firstItem="T7Q-G2-Ec1" firstAttribute="top" secondItem="kw4-n2-N3S" secondAttribute="bottom" constant="50" id="JUb-5o-gao"/>
                                     <constraint firstItem="4su-qb-hmR" firstAttribute="leading" secondItem="IAu-sf-iM4" secondAttribute="trailing" constant="5" id="OAW-MN-yBq"/>
                                     <constraint firstAttribute="bottom" secondItem="IAu-sf-iM4" secondAttribute="bottom" constant="50" id="Trk-Ua-pep"/>
                                     <constraint firstItem="g6e-hf-HiP" firstAttribute="top" secondItem="GV4-c6-hAr" secondAttribute="top" constant="50" id="XeB-OA-OHC"/>
-                                    <constraint firstItem="T7Q-G2-Ec1" firstAttribute="leading" secondItem="GV4-c6-hAr" secondAttribute="leading" id="Ycz-YT-d22"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4su-qb-hmR" secondAttribute="trailing" id="arL-Ha-Jpm"/>
-                                    <constraint firstItem="kw4-n2-N3S" firstAttribute="top" secondItem="KrZ-Rs-b00" secondAttribute="bottom" constant="50" id="bFt-7j-Jtj"/>
-                                    <constraint firstAttribute="trailing" secondItem="T7Q-G2-Ec1" secondAttribute="trailing" id="bXZ-bC-AA0"/>
                                     <constraint firstAttribute="trailing" secondItem="g6e-hf-HiP" secondAttribute="trailing" id="e0F-6e-jcp"/>
                                     <constraint firstAttribute="trailing" secondItem="KrZ-Rs-b00" secondAttribute="trailing" id="er3-Eg-Pog"/>
                                     <constraint firstAttribute="trailing" secondItem="Mdc-9l-Wma" secondAttribute="trailing" id="hPh-ny-wwb"/>
@@ -181,7 +128,6 @@
                                     <constraint firstItem="4su-qb-hmR" firstAttribute="centerY" secondItem="IAu-sf-iM4" secondAttribute="centerY" id="vMy-h4-Rjr"/>
                                     <constraint firstItem="g6e-hf-HiP" firstAttribute="leading" secondItem="GV4-c6-hAr" secondAttribute="leading" id="w3i-Zr-a1r"/>
                                     <constraint firstItem="KrZ-Rs-b00" firstAttribute="top" secondItem="Mdc-9l-Wma" secondAttribute="bottom" constant="25" id="xKq-9y-ryG"/>
-                                    <constraint firstItem="kw4-n2-N3S" firstAttribute="centerX" secondItem="GV4-c6-hAr" secondAttribute="centerX" id="xgr-XN-zZF"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -422,12 +368,6 @@
         <designable name="KrZ-Rs-b00">
             <size key="intrinsicContentSize" width="52" height="32"/>
         </designable>
-        <designable name="Qul-Ap-UxK">
-            <size key="intrinsicContentSize" width="42" height="30"/>
-        </designable>
-        <designable name="YCg-zx-dYY">
-            <size key="intrinsicContentSize" width="51" height="30"/>
-        </designable>
         <designable name="b6O-m7-76E">
             <size key="intrinsicContentSize" width="60" height="60"/>
         </designable>
@@ -435,9 +375,6 @@
     <resources>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="profile-image" width="60" height="60"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

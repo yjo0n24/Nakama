@@ -14,8 +14,8 @@ struct PostModel: Codable {
     let imageUrl: String?
     let createdDate: Date
     
-    init(userInfo: PostUserInfo, textContent: String, imageUrl: String?, createdDate: Date) {
-        self.postId = nil
+    init(postId: String?, userInfo: PostUserInfo, textContent: String, imageUrl: String?, createdDate: Date) {
+        self.postId = postId
         self.userInfo = userInfo
         self.textContent = textContent
         self.imageUrl = imageUrl

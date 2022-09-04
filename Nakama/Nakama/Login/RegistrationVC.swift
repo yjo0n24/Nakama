@@ -33,7 +33,7 @@ class RegistrationVC: BaseUIViewController {
     var presenter: RegistrationPresenter = RegistrationPresenter(service: RegistrationService())
     var stepType: RegistrationStepType = .username
     var username: String = ""
-    private var imageData: Data?
+    var imageData: Data?
     
     // MARK: - Methods
     override func viewDidLoad() {
@@ -157,6 +157,9 @@ class RegistrationVC: BaseUIViewController {
             self.navigationController?.pushViewController(registrationVC, animated: true)
             
         } else {
+            
+            showLoadingIndicator()
+            
             presenter.performSignUp(
                 username: username,
                 email: txtEmail.text!,
@@ -195,11 +198,17 @@ extension RegistrationVC: RegistrationPresenterProtocol {
     }
     
     func onSignUpSuccess() {
-        routeToHome()
+        DispatchQueue.main.async {
+            self.dismissLoadingIndicator()
+            self.routeToHome()
+        }
     }
     
     func onError(errorMessage: String) {
-        showAlert(message: errorMessage)
+        DispatchQueue.main.async {
+            self.dismissLoadingIndicator()
+            self.showAlert(message: errorMessage)
+        }
     }
     
     func onErrorValidateCredentials(errorTypes: [FormErrorType]) {

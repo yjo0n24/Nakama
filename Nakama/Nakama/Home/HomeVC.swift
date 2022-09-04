@@ -7,7 +7,6 @@
 
 import UIKit
 import Kingfisher
-import iOSDropDown
 
 class HomeVC: BaseUIViewController {
     
@@ -18,7 +17,7 @@ class HomeVC: BaseUIViewController {
     
     // MARK: - Variables
     private let refreshControl = UIRefreshControl()
-    private let presenter = HomePresenter()
+    private let presenter = HomePresenter(service: HomeService())
     private let cellIdentifier = String(describing: TimelinePostCell.self)
     private var rowCount = 0
     
@@ -72,39 +71,45 @@ class HomeVC: BaseUIViewController {
 extension HomeVC: HomePresenterProtocol {
     
     func didReceivePosts(numOfRows: Int, refreshTableView: Bool) {
-        rowCount = numOfRows
+        DispatchQueue.main.async {
+            self.rowCount = numOfRows
 
-        if rowCount > 0 {
-            shouldShowEmptyView(false)
-            
-            if refreshTableView {
-                refreshControl.endRefreshing()
-                tblTimeline.reloadData()
-            } else {
-                UIView.performWithoutAnimation {
-                    let currentOffset = tblTimeline.contentOffset
-                    tblTimeline.reloadData()
-                    tblTimeline.contentOffset = currentOffset
+            if self.rowCount > 0 {
+                self.shouldShowEmptyView(false)
+                
+                if refreshTableView {
+                    self.refreshControl.endRefreshing()
+                    self.tblTimeline.reloadData()
+                } else {
+                    UIView.performWithoutAnimation {
+                        let currentOffset = self.tblTimeline.contentOffset
+                        self.tblTimeline.reloadData()
+                        self.tblTimeline.contentOffset = currentOffset
+                    }
                 }
+            } else {
+                self.shouldShowEmptyView(true)
             }
-        } else {
-            shouldShowEmptyView(true)
         }
     }
     
     func didReachEndOfPosts() {
-        rowCount > 0 ? shouldShowEmptyView(false) : shouldShowEmptyView(true)
-        
-        if refreshControl.isRefreshing {
-            refreshControl.endRefreshing()
+        DispatchQueue.main.async {
+            self.rowCount > 0 ? self.shouldShowEmptyView(false) : self.shouldShowEmptyView(true)
+            
+            if self.refreshControl.isRefreshing {
+                self.refreshControl.endRefreshing()
+            }
         }
     }
     
     func onError(errorMessage: String) {
-        showAlert(message: errorMessage)
-        
-        if refreshControl.isRefreshing {
-            refreshControl.endRefreshing()
+        DispatchQueue.main.async {
+            self.showAlert(message: errorMessage)
+            
+            if self.refreshControl.isRefreshing {
+                self.refreshControl.endRefreshing()
+            }
         }
     }
 }
@@ -125,6 +130,7 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
             userImage: displayData.userImage,
             textContent: displayData.textContent,
             imageUrl: displayData.imageUrl,
+            createdDate: displayData.createdDate,
             moreHidden: true
         )
         

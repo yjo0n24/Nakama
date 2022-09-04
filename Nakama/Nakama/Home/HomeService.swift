@@ -36,7 +36,17 @@ class HomeService {
                 self?.postsLastSnapshot = lastSnapshot
             }
             
-            let documentsDict = snapshot.documents.map({ $0.data() })
+            //let documentsDict = snapshot.documents.map({ $0.data() })
+            var documentsDict = [[String: Any]]()
+            for document in snapshot.documents {
+                var documentDict = document.data()
+                documentDict["postId"] = document.documentID
+                
+                if let timestamp = document["createdDate"] as? Timestamp {
+                    documentDict["createdDate"] = timestamp.dateValue
+                }
+                documentsDict.append(documentDict)
+            }
             
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: documentsDict, options: .prettyPrinted)

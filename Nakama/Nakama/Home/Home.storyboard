@@ -344,6 +344,11 @@
             <point key="canvasLocation" x="603" y="-131"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="5qp-MS-6y1">
+            <size key="intrinsicContentSize" width="60" height="60"/>
+        </designable>
+    </designables>
     <resources>
         <image name="no-posts" width="60" height="60"/>
         <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>

@@ -19,12 +19,16 @@ protocol ProfilePresenterProtocol: AnyObject {
 class ProfilePresenter {
     
     // MARK: - Variables
-    private let profileService: ProfileService = ProfileService()
+    private let profileService: ProfileService!
     weak var delegate: ProfilePresenterProtocol?
     private var isGettingPosts = false
     private var postList = [PostModel]()
     
     // MARK: - Methods
+    init(service: ProfileService) {
+        profileService = service
+    }
+    
     func getUsername() -> String {
         return UserDataHelper().getLoginInfo().username
     }
@@ -33,32 +37,35 @@ class ProfilePresenter {
         return URL(string: UserDataHelper().getLoginInfo().profileImage ?? "")
     }
     
-    func getPostDisplayData(with index: Int) -> (username: String, userImage: String?, textContent: String, imageUrl: String?) {
-        guard index < postList.count else { return ("", nil, "", nil) }
+    func getPostDisplayData(with index: Int) ->
+    (username: String, userImage: String?, textContent: String, imageUrl: String?, createdDate: String) {
+        
+        guard index < postList.count else { return ("", nil, "", nil, "") }
         let post = postList[index]
-        return (post.userInfo.username, post.userInfo.profileImage, post.textContent, post.imageUrl)
+        return (post.userInfo.username, post.userInfo.profileImage, post.textContent, post.imageUrl, post.createdDate.displayFormat())
     }
     
+    // MARK: - Service methods
     func performGetPersonalPosts(refreshPosts: Bool, numOfPosts: Int = 10) {
         guard !isGettingPosts else { return }
         isGettingPosts = true
         
-        profileService.performGetPersonalPosts(refreshPosts: refreshPosts, numOfPosts: numOfPosts, completion: { [weak self] (posts, error) in
+        profileService.performGetPersonalPosts(refreshPosts: refreshPosts, numOfPosts: numOfPosts,
+                                            completion: { [weak self] (posts, error) in
+            
             guard let self = self else { return }
             self.isGettingPosts = false
             
-            DispatchQueue.main.async {
-                if let error = error {
-                    self.delegate?.onError(errorMessage: error.localizedDescription)
-                } else {
-                    guard posts.count > 0 else {
-                        self.delegate?.didReachEndOfPosts()
-                        return
-                    }
-                    
-                    refreshPosts ? self.postList = posts : self.postList.append(contentsOf: posts)
-                    self.delegate?.didReceivePosts(numOfRows: self.postList.count, refreshTableView: refreshPosts)
+            if let error = error {
+                self.delegate?.onError(errorMessage: error.localizedDescription)
+            } else {
+                guard posts.count > 0 else {
+                    self.delegate?.didReachEndOfPosts()
+                    return
                 }
+                
+                refreshPosts ? self.postList = posts : self.postList.append(contentsOf: posts)
+                self.delegate?.didReceivePosts(numOfRows: self.postList.count, refreshTableView: refreshPosts)
             }
         })
     }
@@ -69,12 +76,10 @@ class ProfilePresenter {
         profileService.performDeletePost(for: postId, completion: { [weak self] (error) in
             guard let self = self else { return }
             
-            DispatchQueue.main.async {
-                if let error = error {
-                    self.delegate?.onError(errorMessage: error.localizedDescription)
-                } else {
-                    self.delegate?.onPostDeleteSuccess(message: StringConstants.Profile.alertDeletePostSuccessMsg.localized)
-                }
+            if let error = error {
+                self.delegate?.onError(errorMessage: error.localizedDescription)
+            } else {
+                self.delegate?.onPostDeleteSuccess(message: StringConstants.Profile.alertDeletePostSuccessMsg.localized)
             }
         })
     }

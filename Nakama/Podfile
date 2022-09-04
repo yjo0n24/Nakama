@@ -10,8 +10,9 @@ target 'Nakama' do
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
   pod 'FirebaseStorage'
-  pod 'iOSDropDown'
+  pod 'IQKeyboardManagerSwift'
   pod 'Kingfisher', '~> 7.0'
+  pod 'lottie-ios'
 
   target 'NakamaTests' do
     inherit! :search_paths

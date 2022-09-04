@@ -49,6 +49,10 @@ class ProfileService {
             for document in snapshot.documents {
                 var documentDict = document.data()
                 documentDict["postId"] = document.documentID
+                
+                if let timestamp = document["createdDate"] as? Timestamp {
+                    documentDict["createdDate"] = timestamp.dateValue
+                }
                 documentsDict.append(documentDict)
             }
             

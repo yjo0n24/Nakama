@@ -18,7 +18,8 @@ class MockRegistrationVC: RegistrationPresenterProtocol {
     var onErrorValidateCredentialsCalled = false
     
     init(presenter: RegistrationPresenter) {
-        presenter.delegate = self
+        self.presenter = presenter
+        self.presenter.delegate = self
     }
     
     func onFormValidate(isValid: Bool) {

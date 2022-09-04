@@ -37,15 +37,8 @@ class LoginVC: BaseUIViewController {
     
     // MARK: - IBActions
     @IBAction func btnSignInAction(_ sender: UIButton) {
+        showLoadingIndicator()
         presenter.performSignIn(email: txtEmail.text!, password: txtPassword.text!)
-    }
-    
-    @IBAction func btnGoogleSignInAction(_ sender: UIButton) {
-        
-    }
-    
-    @IBAction func btnAppleSignInAction(_ sender: UIButton) {
-        
     }
 }
 
@@ -68,10 +61,15 @@ extension LoginVC: LoginPresenterProtocol {
     
     // Service callback
     func onSignInSuccess() {
-        routeToHome()
+        DispatchQueue.main.async {
+            self.dismissLoadingIndicator()
+            self.routeToHome()
+        }
     }
     
     func onError(errorMessage: String) {
-        showAlert(message: errorMessage)
+        DispatchQueue.main.async {
+            self.showAlert(message: errorMessage)
+        }
     }
 }

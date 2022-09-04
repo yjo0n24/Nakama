@@ -18,6 +18,19 @@ struct StringConstants {
         static let btnCancel = "BTN_CANCEL"
     }
     
+    struct PostTime {
+        static let secondAgo = "TIME_SECOND_AGO"
+        static let secondsAgo = "TIME_SECONDS_AGO"
+        static let minuteAgo = "TIME_MINUTE_AGO"
+        static let minutesAgo = "TIME_MINUTES_AGO"
+        static let hourAgo = "TIME_HOUR_AGO"
+        static let hoursAgo = "TIME_HOURS_AGO"
+        static let dayAgo = "TIME_DAY_AGO"
+        static let daysAgo = "TIME_DAYS_AGO"
+        static let weekAgo = "TIME_WEEK_AGO"
+        static let weeksAgo = "TIME_WEEKS_AGO"
+    }
+    
     struct Error {
         static let titleGeneral = "ERROR_TITLE_GENERAL"
         static let msgGeneral = "ERROR_MESSAGE_GENERAL"

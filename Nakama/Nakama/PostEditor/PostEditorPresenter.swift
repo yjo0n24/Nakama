@@ -58,6 +58,7 @@ class PostEditorPresenter {
         
         // Post info
         let model = PostModel(
+            postId: nil,
             userInfo: userInfo,
             textContent: textContent,
             imageUrl: imageUrl,
@@ -67,10 +68,12 @@ class PostEditorPresenter {
         postEditorService.performCreatePost(model, completion: { [weak self] error in
             guard let self = self else { return }
             
-            if let error = error {
-                self.delegate?.onError(errorMessage: error.localizedDescription)
-            } else {
-                self.delegate?.onCreatePostSuccess()
+            DispatchQueue.main.async {
+                if let error = error {
+                    self.delegate?.onError(errorMessage: error.localizedDescription)
+                } else {
+                    self.delegate?.onCreatePostSuccess()
+                }
             }
         })
     }

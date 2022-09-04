@@ -52,8 +52,13 @@ class TimelinePostCell: UITableViewCell {
         )
     }
     
-    func setupCell(username: String, userImage: String?, textContent: String, imageUrl: String?, moreHidden: Bool) {
-        lblUsername.text = username
+    func setupCell(username: String, userImage: String?, textContent: String, imageUrl: String?, createdDate: String, moreHidden: Bool) {
+        let usernameAndTime = NSMutableAttributedString(string: "\(username)  \u{2022} \(createdDate)")
+        let formattedUsernameAndTime = usernameAndTime
+            .colour(text: createdDate, .lightGray)
+            .font(text: createdDate, .systemFont(ofSize: 12.0, weight: .regular))
+        lblUsername.attributedText = formattedUsernameAndTime
+        
         txtContent.text = textContent
         
         // User profile image

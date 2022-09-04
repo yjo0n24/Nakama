@@ -62,11 +62,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func setRootVC(storyboardName: String) {
+        guard let window = window else { return }
         guard let vc = UIStoryboard(name: storyboardName, bundle: nil).instantiateInitialViewController() else {
             return
         }
-        window?.rootViewController = vc
-        window?.makeKeyAndVisible()
+        
+        window.rootViewController = vc
+        
+        let options = UIView.AnimationOptions.transitionFlipFromLeft
+        UIView.transition(with: window, duration: 0.5, options: options, animations: {}, completion: { result in
+            window.makeKeyAndVisible()
+        })
     }
 
     @objc private func beginSetRootVC(_ notification: Notification) {

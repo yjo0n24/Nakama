@@ -14,6 +14,18 @@
 "BTN_CONTINUE" = "Continue";
 "BTN_CANCEL" = "Cancel";
 
+// MARK: - Post time
+"TIME_SECOND_AGO" = "%d second ago";
+"TIME_SECONDS_AGO" = "%d seconds ago";
+"TIME_MINUTE_AGO" = "%d minute ago";
+"TIME_MINUTES_AGO" = "%d minutes ago";
+"TIME_HOUR_AGO" = "%d hour ago";
+"TIME_HOURS_AGO" = "%d hours ago";
+"TIME_DAY_AGO" = "%d day ago";
+"TIME_DAYS_AGO" = "%d days ago";
+"TIME_WEEK_AGO" = "%d week ago";
+"TIME_WEEKS_AGO" = "%d weeks ago";
+
 // MARK: - Errors
 "ERROR_TITLE_GENERAL" = "Error";
 "ERROR_MESSAGE_GENERAL" = "Oops, we've encountered an error. Please try again later.";
@@ -39,8 +51,6 @@
 "REGISTER_TXT_PLACEHOLDER_PASSWORD" = "Password";
 "REGISTER_TXT_PLACEHOLDER_CONFIRM_PASSWORD" = "Confirm Password";
 "REGISTER_BTN_FINISH" = "All set!";
-
-// MARK: - Home
 
 // MARK: - Profile
 "PROFILE_LBL_POSTS_HEADER" = "My Posts";

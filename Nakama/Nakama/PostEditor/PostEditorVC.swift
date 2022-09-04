@@ -21,6 +21,7 @@ class PostEditorVC: BaseUIViewController {
     // MARK: - Variables
     private let presenter = PostEditorPresenter()
     private var imageData: Data?
+    private let characterLimit = 500
     
     // MARK: - Methods
     override func viewDidLoad() {
@@ -29,11 +30,19 @@ class PostEditorVC: BaseUIViewController {
         initUI()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        setKeyboardManager(isEnabled: true)
+    }
+    
     private func initUI() {
+        lblTextCount.text = "0 / \(characterLimit)"
         txtContent.text = StringConstants.PostEditor.txtPlaceholder.localized
         txtContent.textColor = .lightGray
         imgAttachment.layer.cornerRadius = 10.0
         btnUploadImage.imageView?.contentMode = .scaleAspectFit
+        
+        setKeyboardManager(isEnabled: false)
     }
     
     private func showImagePicker() {
@@ -67,6 +76,8 @@ class PostEditorVC: BaseUIViewController {
         if txtContent.textColor == .lightGray {
             textContent = ""
         }
+        
+        showLoadingIndicator()
         presenter.performCreatePost(textContent: textContent, imageData: imageData)
     }
 }
@@ -79,10 +90,15 @@ extension PostEditorVC: PostEditorPresenterProtocol {
     }
     
     func onCreatePostSuccess() {
-        self.dismiss(animated: true)
+        dismissLoadingIndicator()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+            self.dismiss(animated: true)
+        })
     }
     
     func onError(errorMessage: String) {
+        dismissLoadingIndicator()
         showAlert(message: errorMessage)
     }
 }
@@ -98,7 +114,7 @@ extension PostEditorVC: UITextViewDelegate {
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        lblTextCount.text = "\(textView.text.count)/500"
+        lblTextCount.text = "\(textView.text.count) / \(characterLimit)"
         presenter.validateInput(textView.text ?? "", imageData: imageData)
     }
     
@@ -107,6 +123,12 @@ extension PostEditorVC: UITextViewDelegate {
             textView.text = StringConstants.PostEditor.txtPlaceholder.localized
             textView.textColor = .lightGray
         }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let textContent = (textView.text ?? "") as NSString
+        let currentText = textContent.replacingCharacters(in: range, with: text)
+        return currentText.count <= characterLimit
     }
 }
 
